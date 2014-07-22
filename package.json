@@ -14,10 +14,10 @@
     "karma-junit-reporter": "^0.2.2"
   },
   "scripts": {
-    "postinstall": "bower install",
+    "postinstall": "bower install --allow-root",
 
-    "prestart": "npm install",
-    "start": "http-server -a localhost -p 9000",
+    "prestart": "npm install --unsafe-perm",
+    "start": "http-server -p 9000",
 
     "pretest": "npm install",
     "test": "karma start test/karma.conf.js",
