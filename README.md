@@ -9,7 +9,7 @@ All you need to do is to clone this repository,
 git clone https://github.com/komushi/angular-gnavi
 cd angular-gnavi
 ```
-Remeber to install node.js and npm first.
+Remeber to install node.js/npm and bower first.
 Then, install the dependencies:
 
 ```
