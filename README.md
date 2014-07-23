@@ -1,5 +1,8 @@
 # angular-gnavi
 
+## Live Demo
+[DEMO](http://http://ks3001165.kimsufi.com/)
+
 ## Getting Started
 
 All you need to do is to clone this repository,
