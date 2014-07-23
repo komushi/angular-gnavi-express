@@ -1,0 +1,68 @@
+{
+    "total_hit_count": "14330",
+    "hit_per_page": "1",
+    "page_offset": "1",
+    "rest": {
+        "@attributes": {"order": "0"},
+        "id": "e724000",
+        "update_date": "2014-07-02 06:05:34",
+        "name": "ニューハーフショー ひげガール 新宿歌舞伎町店",
+        "name_kana": "ニューハーフショー ヒゲガール シンジュクカブキチョウテン",
+        "latitude": "35.690939",
+        "longitude": "139.707397",
+        "category": "新宿オカマエンタメ",
+        "url": "http://r.gnavi.co.jp/e724000/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "url_mobile": "http://mobile.gnavi.co.jp/shop/e724000/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "image_url": {
+            "shop_image1": "http://apicache.gnavi.co.jp/image/rest/index.php?img=e724000w.gif&sid=e724000",
+            "shop_image2": {},
+            "qrcode": "http://r.gnst.jp/tool/qr/?id=e724000&q=6"
+        },
+        "address": "〒160-0021 東京都新宿区歌舞伎町1-2-8 第2ウィザードセブンビル5F",
+        "tel": "03-5292-1275",
+        "fax": "03-5292-1276",
+        "opentime": "月～日 18:00～翌1:00,",
+        "holiday": "無",
+        "access": {
+            "line": "ＪＲ",
+            "station": "新宿駅",
+            "station_exit": {},
+            "walk": "7",
+            "note": {}
+        },
+        "pr": {
+            "pr_short": "新宿歌舞伎町ニューハーフ！大小宴会大歓ゲイ！ 90分ハウスボトル(焼酎)飲み放題!豪華オカマ付き！",
+            "pr_long": "ひげガールはＴＶでも活躍中のニューハーフが多数在籍するお店です！\n初めての方は90分セット料金6150円ハウスボトル（焼酎）飲み放題豪華オカマ付き！！\nショータイム開催は毎週(水)～(土)1回目19時 2回目22時スタート\nぐるなび限定のお得なクーポンをご用意しておりますので是非ご利用下さい。"
+        },
+        "code": {
+            "areacode": "AREA110",
+            "areaname": "関東",
+            "prefcode": "PREF13",
+            "prefname": "東京都",
+            "areaname_s": "新宿東口・歌舞伎町",
+            "category_code_l": [
+                "RSFST19000",
+                "RSFST19000"
+            ],
+            "category_name_l": [
+                "宴会・カラオケ・エンターテイメント",
+                "宴会・カラオケ・エンターテイメント"
+            ],
+            "category_code_s": [
+                "RSFST19003",
+                "RSFST19008"
+            ],
+            "category_name_s": [
+                "宴会場",
+                "アミューズメント"
+            ]
+        },
+        "equipment": "50人以上OK(着席時),貸切可,宴会用飲み放題メニューあり,ソフトバンク,NTT ドコモ,au,23時以降も食事ができる,飲み放題メニューあり,誕生日特典あり,ワインセラーがある,ライブやショーが見られる,マイク利用可,ステージあり,ビンゴゲームあり,合コン,",
+        "budget": "4000",
+        "flags": {
+            "mobile_site": "1",
+            "mobile_coupon": "1",
+            "pc_coupon": "1"
+        }
+    }
+}

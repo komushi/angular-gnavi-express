@@ -1,0 +1,68 @@
+{
+    "total_hit_count": "87998",
+    "hit_per_page": "1",
+    "page_offset": "1",
+    "rest": {
+        "@attributes": {"order": "0"},
+        "id": "g105302",
+        "update_date": "2014-07-02 05:54:30",
+        "name": "ウェディング・貸切・個室ＰａｒｔｙＲｏｏｍ Alice aqua garden Tokyo Marunouchi 〜東京・丸の内・八重洲〜",
+        "name_kana": "ウェディングカシキリコシツパーティールーム アリスアクアガーデン トウキョウマルノウチ トウキョウマルノウチヤエス",
+        "latitude": "35.675897",
+        "longitude": "139.765444",
+        "category": "レストラン＆ダイニング",
+        "url": "http://r.gnavi.co.jp/g105302/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "url_mobile": "http://mobile.gnavi.co.jp/shop/g105302/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "image_url": {
+            "shop_image1": "http://apicache.gnavi.co.jp/image/rest/index.php?img=g105302v.jpg&sid=g105302",
+            "shop_image2": {},
+            "qrcode": "http://r.gnst.jp/tool/qr/?id=g105302&q=6"
+        },
+        "address": "〒100-0005 東京都千代田区丸の内2-1-1 明治安田生命ビルB1",
+        "tel": "03-3287-8153",
+        "fax": "03-3287-8153",
+        "opentime": "月～日 11:00～23:00,",
+        "holiday": "無",
+        "access": {
+            "line": "ＪＲ",
+            "station": "東京駅",
+            "station_exit": {},
+            "walk": "4",
+            "note": {}
+        },
+        "pr": {
+            "pr_short": "やりたいがデキル。 エレガントリゾート空間×プロ設備で自由自在パーティ 【宴】飲み放題付パーティーコース3680円～♪ 最大150名様個室⇒Wedding・会議室利用OK",
+            "pr_long": "～空・海・光がテーマ☆少人数から団体様までバリエーション豊かな空間～\nSPルーム 20名様まで\nAルーム 24名様 Bルーム 50名様\nCルーム 80名様 Dルーム 100名様\nEルーム 120名様 Fルーム(全館貸切) 200名様\n◆パーティープラン 飲み放題付5,150円～⇒3,980円～!\n◆会議室利用もOK【1時間 400円/人】プロジェクターなど無料!\n◆当店もう一つの顔\u201cウエディング\u201d!!\n専属コーディネーターが真心サポート!2色に輝く15mのバージンロードでは本格的な挙式OK\n◆ウエディング二次会プラン 飲み放題付き 4,150円～!!\n◆大充実!!プロ仕様のハイレベル設備♪\n音響,カラオケ,照明,180インチ大型プロジェクター&スクリーン,モニターetc...\n◆空間 10席～150席⇒店貸切も要相談\n[姉妹店] 東京日本橋店でもご予約承ります★"
+        },
+        "code": {
+            "areacode": "AREA110",
+            "areaname": "関東",
+            "prefcode": "PREF13",
+            "prefname": "東京都",
+            "areaname_s": "丸の内",
+            "category_code_l": [
+                "RSFST11000",
+                "RSFST19000"
+            ],
+            "category_name_l": [
+                "イタリアン・フレンチ",
+                "宴会・カラオケ・エンターテイメント"
+            ],
+            "category_code_s": [
+                "RSFST11002",
+                "RSFST19001"
+            ],
+            "category_name_s": [
+                "イタリアン(イタリア料理)",
+                "パーティールーム・スペース"
+            ]
+        },
+        "equipment": "50人以上OK(着席時),個室あり,貸切可,宴会用飲み放題メニューあり,結納で利用可,法事で利用可,NTT ドコモ,ソフトバンク,au,飲み放題メニューあり,スポーツ観戦ができる,カラオケあり,マイク利用可,ステージあり,プロジェクター・スクリーンあり,ビンゴゲームあり,3時間以上の宴会・パーティ可,昼間の宴会・パーティ対応可,車いすでトイレ利用可,カジュアル,ランチメニューあり,利用可,日曜営業あり,デリバリー可,ケータリング可,ベジタリアンメニューご相談,女子会,デート,2次会,記念日,合コン,同窓会,歓迎会,送別会,お祝い事,家族,大人数,エンターテイメント,歓迎会・送別会,",
+        "budget": "3000",
+        "flags": {
+            "mobile_site": "1",
+            "mobile_coupon": "0",
+            "pc_coupon": "1"
+        }
+    }
+}

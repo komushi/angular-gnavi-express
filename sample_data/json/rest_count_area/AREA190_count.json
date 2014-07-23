@@ -1,0 +1,68 @@
+{
+    "total_hit_count": "18842",
+    "hit_per_page": "1",
+    "page_offset": "1",
+    "rest": {
+        "@attributes": {"order": "0"},
+        "id": "s261100",
+        "update_date": "2014-07-22 23:52:07",
+        "name": "瓦町個室居酒屋 柚柚～yuyu～ 瓦町駅前店 宴会・駅前・飲み放題・コース・合コン・団体",
+        "name_kana": "カワラマチコシツイザカヤ ユウユウ カワラマチエキマエテン",
+        "latitude": "34.336250",
+        "longitude": "134.054867",
+        "category": "全席完全個室",
+        "url": "http://r.gnavi.co.jp/s261100/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "url_mobile": "http://mobile.gnavi.co.jp/shop/s261100/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "image_url": {
+            "shop_image1": "http://apicache.gnavi.co.jp/image/rest/index.php?img=s261100v.jpg&sid=s261100",
+            "shop_image2": "http://apicache.gnavi.co.jp/image/rest/index.php?img=s261100l.jpg&sid=s261100",
+            "qrcode": "http://r.gnst.jp/tool/qr/?id=s261100&q=6"
+        },
+        "address": "〒760-0052 香川県高松市瓦町2-6-14 瓦町スクエアビル6F",
+        "tel": "087-832-5310",
+        "fax": {},
+        "opentime": "月～日 17:00～24:00(L.O.23:30),",
+        "holiday": "不定休日あり<BR>\u203b(元日)",
+        "access": {
+            "line": "琴電琴平線",
+            "station": "瓦町駅",
+            "station_exit": {},
+            "walk": "1",
+            "note": {}
+        },
+        "pr": {
+            "pr_short": "全席完全個室・２名～最大５０名までＯＫ♪ 琴電琴平線 瓦町駅より徒歩1分♪全席完全個室の居酒屋です! 東北料理と柚子を使った料理♪ご宴会のご予約受付中！",
+            "pr_long": "◆全席個室＆掘りごたつ◆\n『瓦町個室居酒屋 柚柚～yuyu～ 瓦町駅前店』\n２名様～最大60名様迄、必ず個室へご案内いたします♪\n\n全席完全個室なので周りを気にせずＯＫ♪\n\n宴会・歓迎会・合コン・打ち上げ・同窓会などご利用に是非どうぞ！！\nもちろん！２次会もご利用ください。\n◆宴会コースも多数ご用意◆\n月替わりのコースは、\nぐるなび限定2980円のリーズナブルなコースから大満足6500円コースまでの宴会をご用意☆\n飲み放題の種類は１６０種類以上♪♪\nビールはキリンの【一番搾り】です♪\n\n従業員一同心よりお待ちしております★\n０８７－８３２－５３１０（２４時間予約受付中気軽にお電話ください。）"
+        },
+        "code": {
+            "areacode": "AREA190",
+            "areaname": "四国",
+            "prefcode": "PREF37",
+            "prefname": "香川県",
+            "areaname_s": "高松市中心部",
+            "category_code_l": [
+                "RSFST17000",
+                "RSFST17000"
+            ],
+            "category_name_l": [
+                "オーガニック・創作料理",
+                "オーガニック・創作料理"
+            ],
+            "category_code_s": [
+                "RSFST17001",
+                "RSFST17002"
+            ],
+            "category_name_s": [
+                "創作和食",
+                "創作料理"
+            ]
+        },
+        "equipment": "50人以上OK(着席時),個室あり,二人でも個室OK,完全個室あり,貸切可,宴会用飲み放題メニューあり,座敷席あり,掘りごたつ席あり,ソフトバンク,NTT ドコモ,au,日曜営業あり,飲み放題メニューあり,誕生日特典あり,ドリンクの持込可,3時間以上の宴会・パーティ可,車いすで入店可,お子様連れ歓迎,利用可,喫煙席あり,請求書払いご相談,女子会,デート,2次会,合コン,同窓会,歓迎会,送別会,お祝い事,家族,大人数,不可,ソフトバンク Wi-Fi,歓迎会・送別会,",
+        "budget": "2980",
+        "flags": {
+            "mobile_site": "1",
+            "mobile_coupon": "1",
+            "pc_coupon": "1"
+        }
+    }
+}

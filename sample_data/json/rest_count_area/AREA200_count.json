@@ -1,0 +1,68 @@
+{
+    "total_hit_count": "8071",
+    "hit_per_page": "1",
+    "page_offset": "1",
+    "rest": {
+        "@attributes": {"order": "0"},
+        "id": "fawx800",
+        "update_date": "2014-07-18 01:25:34",
+        "name": "西原・高台のパーティスペース ダイナーニッカポッカ",
+        "name_kana": "ニシハラタカダイノパーティスペース ダイナーニッカポッカ",
+        "latitude": "26.234283",
+        "longitude": "127.741417",
+        "category": "ダイナー",
+        "url": "http://r.gnavi.co.jp/rnpx5eej0000/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "url_mobile": "http://mobile.gnavi.co.jp/shop/fawx800/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "image_url": {
+            "shop_image1": "http://apicache.gnavi.co.jp/image/rest/index.php?img=fawx800v.jpg&sid=rnpx5eej0000",
+            "shop_image2": {},
+            "qrcode": "http://r.gnst.jp/tool/qr/?id=fawx800&q=6"
+        },
+        "address": "〒903-0116 沖縄県中頭郡西原町字幸地578-3",
+        "tel": "098-945-0583",
+        "fax": {},
+        "opentime": " ランチ：11:00～15:00(L.O.14:30)、ディナー：18:00～24:00(L.O.23:00、ドリンクL.O.23:30)(ディナーのみ不定休有り),",
+        "holiday": "不定休日あり<BR>\u203bランチタイムは日曜日定休日です。",
+        "access": {
+            "line": "沖縄自動車道",
+            "station": "西原I.C.",
+            "station_exit": {},
+            "walk": "車7",
+            "note": {}
+        },
+        "pr": {
+            "pr_short": "昼と夜で違う顔をもつカジュアルなアボカド専門店♪ ３月４月５月歓送迎会ご予約元気に承ります☆★☆",
+            "pr_long": "西原町・幸地の高台のオリジナルダイナー。\n昼と夜でガラリと雰囲気が変わる不思議なお店です♪\nランチはもちろん、夜もアボカドおつまみ沢山ご用意してますｖ(＾＾)\nリーズナブルな当日飲み放題(2H)もございます♪\n\n団体様必見★昼も夜もフロアチャージ・100inプロジェクター\n最新機種サイバーDAM・その他音響機器を！！ぜーんぶ無料！！でお使いいただけますｖ(＾＾)"
+        },
+        "code": {
+            "areacode": "AREA200",
+            "areaname": "沖縄",
+            "prefcode": "PREF47",
+            "prefname": "沖縄県",
+            "areaname_s": "浦添",
+            "category_code_l": [
+                "RSFST11000",
+                "RSFST11000"
+            ],
+            "category_name_l": [
+                "イタリアン・フレンチ",
+                "イタリアン・フレンチ"
+            ],
+            "category_code_s": [
+                "RSFST11003",
+                "RSFST11004"
+            ],
+            "category_name_s": [
+                "パスタ",
+                "ピザ"
+            ]
+        },
+        "equipment": "50人以上OK(着席時),貸切可,NTT ドコモ,ソフトバンク,au,飲み放題メニューあり,ライブやショーが見られる,バンド演奏ができる,カラオケあり,マイク利用可,プロジェクター・スクリーンあり,宴会用飲み放題メニューあり,3時間以上の宴会・パーティ可,2,000円以内で宴会ができる,昼間の宴会・パーティ対応可,車いすで入店可,車いすでトイレ利用可,ランチメニューあり,喫煙席あり,BAR併設,ドギーバッグ可,カウンター席あり,夜景が見える,デート,2次会,記念日,お一人様,歓迎会,送別会,大人数,エンターテイメント,不可,au Wi-Fi,歓迎会・送別会,",
+        "budget": "3000",
+        "flags": {
+            "mobile_site": "1",
+            "mobile_coupon": "0",
+            "pc_coupon": "0"
+        }
+    }
+}

@@ -1,0 +1,68 @@
+{
+    "total_hit_count": "23983",
+    "hit_per_page": "1",
+    "page_offset": "1",
+    "rest": {
+        "@attributes": {"order": "0"},
+        "id": "g064207",
+        "update_date": "2014-07-09 06:30:40",
+        "name": "銀座コリドー 本格炭火焼肉 武蔵",
+        "name_kana": "ギンザコリドーホンカクスミビヤキニク ムサシ",
+        "latitude": "35.667864",
+        "longitude": "139.763436",
+        "category": "本格炭火焼肉",
+        "url": "http://r.gnavi.co.jp/g064207/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "url_mobile": "http://mobile.gnavi.co.jp/shop/g064207/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "image_url": {
+            "shop_image1": "http://apicache.gnavi.co.jp/image/rest/index.php?img=g064207v.jpg&sid=g064207",
+            "shop_image2": "http://apicache.gnavi.co.jp/image/rest/index.php?img=g064207l.jpg&sid=g064207",
+            "qrcode": "http://r.gnst.jp/tool/qr/?id=g064207&q=6"
+        },
+        "address": "〒104-0061 東京都中央区銀座7-2-20 パシフィック銀座ビル4F",
+        "tel": "03-5568-7020",
+        "fax": "03-5568-7011",
+        "opentime": "月～日 17:00～23:30(L.O.22:30)(当店は外税価格となっております。),",
+        "holiday": "無<BR>\u203b(年末年始を除く)",
+        "access": {
+            "line": "地下鉄",
+            "station": "銀座駅",
+            "station_exit": "C1・C2・C3出口",
+            "walk": "5",
+            "note": {}
+        },
+        "pr": {
+            "pr_short": "◆極上黒毛和牛1.5H食べ放題\\5,200～ ◆エクストラコールドも!A5黒毛和牛2H飲放付コース\\5,000～ ◆中央区認可済\u201c和牛ユッケ\u201d完全復活! ◆個室～40名様",
+            "pr_long": "【宴会予約受付中】\n最高級の和牛を全国・海外から取り寄せた天然塩等で食す醍醐味!\n焼肉やホルモンが、驚きの価格でお楽しみ頂けます。\n◆脅威のコストパフォーマンスを実現！\n・全50種☆2H飲み放題付コース 5000円～\n・1.5H極上黒毛和牛が食べ放題!男性6200円/女性5200円\n◆氷点下のスーパードライ 『エクストラコールド』\n◆業界最速導入！超話題の 『ドライプレミアム』\n◆ＣＭ等でも話題の  『フローズン生』\n話題の生ビールが飲み放題付コース利用で全て飲み放題！！\n(4名様～金・祝前日は除く)\n◆中央区保健所認可済み!\u201cユッケ刺し\u201d等の\u201c牛生肉\u201d完全復活☆\n◆店内のご紹介（2～最大40名様/半個室・個室）"
+        },
+        "code": {
+            "areacode": "AREA110",
+            "areaname": "関東",
+            "prefcode": "PREF13",
+            "prefname": "東京都",
+            "areaname_s": "銀座（銀座阪急・コリドー街方面）",
+            "category_code_l": [
+                "RSFST05000",
+                "RSFST05000"
+            ],
+            "category_name_l": [
+                "焼肉・ホルモン",
+                "焼肉・ホルモン"
+            ],
+            "category_code_s": [
+                "RSFST05001",
+                "RSFST05002"
+            ],
+            "category_name_s": [
+                "焼肉",
+                "ホルモン"
+            ]
+        },
+        "equipment": "個室あり,二人でも個室OK,掘りごたつ席あり,宴会用食べ放題メニューあり,座椅子あり,宴会用飲み放題メニューあり,ソフトバンク,NTT ドコモ,au,結納で利用可,23時以降も食事ができる,朝までオープン,英語メニューあり,英語メニューあり,食べ放題メニューあり,飲み放題メニューあり,誕生日特典あり,ワインセラーがある,女子会,夜の接待,デート,2次会,記念日,合コン,お一人様,同窓会,歓迎会,送別会,お祝い事,家族,大人数,エンターテイメント,歓迎会・送別会,",
+        "budget": "5000",
+        "flags": {
+            "mobile_site": "1",
+            "mobile_coupon": "1",
+            "pc_coupon": "1"
+        }
+    }
+}

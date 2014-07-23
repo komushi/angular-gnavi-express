@@ -1,0 +1,68 @@
+{
+    "total_hit_count": "15722",
+    "hit_per_page": "1",
+    "page_offset": "1",
+    "rest": {
+        "@attributes": {"order": "0"},
+        "id": "gaa8073",
+        "update_date": "2014-07-09 01:50:55",
+        "name": "リンガーハット 大森店",
+        "name_kana": "リンガーハット オオモリテン",
+        "latitude": "35.584178",
+        "longitude": "139.732025",
+        "category": "長崎ちゃんぽん",
+        "url": "http://r.gnavi.co.jp/4rzckvyk0000/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "url_mobile": "http://mobile.gnavi.co.jp/shop/gaa8073/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "image_url": {
+            "shop_image1": "http://apicache.gnavi.co.jp/image/rest/index.php?img=gaa8073w.jpg&sid=4rzckvyk0000",
+            "shop_image2": {},
+            "qrcode": "http://r.gnst.jp/tool/qr/?id=gaa8073&q=6"
+        },
+        "address": "〒143-0016 東京都大田区大森北1-3-8 地研ブリューエンビル1F",
+        "tel": "03-5764-5027",
+        "fax": {},
+        "opentime": " 11:00～翌4:00,",
+        "holiday": "無<BR>\u203b\u203b年末年始はご確認ください",
+        "access": {
+            "line": {},
+            "station": {},
+            "station_exit": {},
+            "walk": {},
+            "note": {}
+        },
+        "pr": {
+            "pr_short": "チェックインごとにスピードくじにチャレンジ！ 最大500円分のポイントがその場で当たる！",
+            "pr_long": "長崎ちゃんぽんの魅力は、なんと言っても具材の豊富さ。野菜や肉、魚介類がボリュームたっぷりに入ったちゃんぽんは、一品で多彩な栄養が取れる理想的なバランス食です。リンガーハット自慢の長崎ちゃんぽんは、麺本来のうま味、食感を味わっていただくため太めの麺を使用しています。具材には海の幸、山の幸などおなじみのものを使い、当社オリジナルのリンガースパイスで炒めて、長崎ならではの風味に仕上げました。"
+        },
+        "code": {
+            "areacode": "AREA110",
+            "areaname": "関東",
+            "prefcode": "PREF13",
+            "prefname": "東京都",
+            "areaname_s": "大森",
+            "category_code_l": [
+                "RSFST08000",
+                "RSFST14000"
+            ],
+            "category_name_l": [
+                "ラーメン・麺料理",
+                "中華"
+            ],
+            "category_code_s": [
+                "RSFST08005",
+                "RSFST14008"
+            ],
+            "category_name_s": [
+                "ちゃんぽん",
+                "餃子"
+            ]
+        },
+        "equipment": {},
+        "budget": "700",
+        "flags": {
+            "mobile_site": "1",
+            "mobile_coupon": "0",
+            "pc_coupon": "0"
+        }
+    }
+}

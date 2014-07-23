@@ -1,0 +1,68 @@
+{
+    "total_hit_count": "16330",
+    "hit_per_page": "1",
+    "page_offset": "1",
+    "rest": {
+        "@attributes": {"order": "0"},
+        "id": "a799802",
+        "update_date": "2014-07-23 09:41:35",
+        "name": "渋谷 鉄板焼・鮮魚 鉄板焼 響庭 HIBIKITEI 渋谷駅前店 ～鉄板焼き・串焼～　渋谷店　誕生日・記念日に",
+        "name_kana": "シブヤテッパンヤキセンギョ テッパンヤキヒビキテイ シブヤエキマエテン テッパンヤキクシヤキシブヤテンタンジョウビキネンビニ",
+        "latitude": "35.656703",
+        "longitude": "139.702278",
+        "category": "渋谷・鉄板焼・串焼",
+        "url": "http://r.gnavi.co.jp/a799802/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "url_mobile": "http://mobile.gnavi.co.jp/shop/a799802/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "image_url": {
+            "shop_image1": "http://apicache.gnavi.co.jp/image/rest/index.php?img=a799802v.jpg&sid=a799802",
+            "shop_image2": "http://apicache.gnavi.co.jp/image/rest/index.php?img=a799802l.jpg&sid=a799802",
+            "qrcode": "http://r.gnst.jp/tool/qr/?id=a799802&q=6"
+        },
+        "address": "〒150-0042 東京都渋谷区宇田川町26-2 サンルイビル3F",
+        "tel": "03-5459-4062",
+        "fax": "03-5459-4063",
+        "opentime": " ディナー：17:00～24:00(L.O.23:00)<BR>水～日・祝日 ランチ：11:30～15:00(L.O.14:30),",
+        "holiday": "毎週月曜日<BR>\u203b\u203b祝前日は営業",
+        "access": {
+            "line": "ＪＲ",
+            "station": "渋谷駅",
+            "station_exit": {},
+            "walk": "1",
+            "note": {}
+        },
+        "pr": {
+            "pr_short": "渋谷駅1分♪団体様個室有☆限定クーポンも有ります♪ 大人気♪誕生日特典有☆大人の為の本格鉄板ダイニング！ 送迎会、誕生日、女子会は響庭へ♪ランチタイムも営業中♪",
+            "pr_long": "渋谷徒歩1分!上質な空間で上質な素材を頂く。\n大人の為の鉄板焼きダイニング♪ランチ営業実施中♪\n\n◆大反響!!渋谷店限定クーポン（要予約・印刷不要）◆\n【水・木★4名様以上限定】各コースに飲放サービスクーポン♪\n【土・日限定】各コース1000円割引クーポン♪\n詳細はクーポンページをご確認ください。\n◆渋谷店自慢！各種コース料理も充実◆\n【大満足】7品《宇田川コース》4000円\n【一番人気】9品《響コース》 5000円\n渋谷でお祝い！記念日・誕生日にはバースデーデザートサービスも☆\nサプライズ演出も承ってます♪結婚記念日などにも◎\n\n【上質な空間】\n接待にも最適なお席や、鉄板焼きパフォーマンスも楽しめる\nカウンター席など落ち着いた空間をご提供☆\n団体様個室もご用意致しております。\n〒150-0042 東京都渋谷区宇田川町26-2 サンルイビル3F"
+        },
+        "code": {
+            "areacode": "AREA110",
+            "areaname": "関東",
+            "prefcode": "PREF13",
+            "prefname": "東京都",
+            "areaname_s": "センター街・公園通り",
+            "category_code_l": [
+                "RSFST09000",
+                "RSFST06000"
+            ],
+            "category_name_l": [
+                "居酒屋",
+                "焼き鳥・肉料理・串料理"
+            ],
+            "category_code_s": [
+                "RSFST09004",
+                "RSFST06012"
+            ],
+            "category_name_s": [
+                "居酒屋",
+                "串焼き"
+            ]
+        },
+        "equipment": "個室あり,貸切可,宴会用飲み放題メニューあり,禁煙席あり,3時間以上の宴会・パーティ可,ソフトバンク,NTT ドコモ,au,法事で利用可,結納で利用可,飲み放題メニューあり,誕生日特典あり,ソムリエがいる店,ワインセラーがある,昼間の宴会・パーティ対応可,英語メニューあり,ランチメニューあり,内覧歓迎,利用可,日曜営業あり,カウンター席あり,カップルシートあり,ソファー席あり,女子会,夜の接待,デート,2次会,記念日,合コン,同窓会,歓迎会,送別会,お祝い事,家族,大人数,ソフトバンク Wi-Fi,歓迎会・送別会,",
+        "budget": "5000",
+        "flags": {
+            "mobile_site": "1",
+            "mobile_coupon": "1",
+            "pc_coupon": "1"
+        }
+    }
+}

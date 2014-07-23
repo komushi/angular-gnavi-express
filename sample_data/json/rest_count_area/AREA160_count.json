@@ -1,0 +1,68 @@
+{
+    "total_hit_count": "35552",
+    "hit_per_page": "1",
+    "page_offset": "1",
+    "rest": {
+        "@attributes": {"order": "0"},
+        "id": "t337000",
+        "update_date": "2014-07-23 09:46:33",
+        "name": "仙台牛・シャモロック・三元豚・蔵王の有機野菜 伊達の個室居酒屋 夢源 国分町店 高級食材を低価格でご提供！",
+        "name_kana": "センダイギュウシャモロックサンゲントンザオウユウキヤサイ ダテノコシツイザカヤムゲン コクブンチョウテン コウキュウショクザイテイカカク",
+        "latitude": "38.259639",
+        "longitude": "140.873944",
+        "category": "和風居酒屋地酒飲み放題",
+        "url": "http://r.gnavi.co.jp/t337000/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "url_mobile": "http://mobile.gnavi.co.jp/shop/t337000/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "image_url": {
+            "shop_image1": "http://apicache.gnavi.co.jp/image/rest/index.php?img=t337000v.jpg&sid=t337000",
+            "shop_image2": "http://apicache.gnavi.co.jp/image/rest/index.php?img=t337000l.jpg&sid=t337000",
+            "qrcode": "http://r.gnst.jp/tool/qr/?id=t337000&q=6"
+        },
+        "address": "〒980-0803 宮城県仙台市青葉区国分町2-1-1 19フジビル3F",
+        "tel": "022-398-7391",
+        "fax": "022-398-7392",
+        "opentime": "月～金 ランチ：11:30～14:30(L.O.14:00)<BR>金・土・祝前日 ディナー：18:00～翌4:00(L.O.3:00、ドリンクL.O.3:30),",
+        "holiday": "無",
+        "access": {
+            "line": "仙台市営地下鉄南北線",
+            "station": "広瀬通駅",
+            "station_exit": "西5番出口",
+            "walk": "3",
+            "note": {}
+        },
+        "pr": {
+            "pr_short": "○全席完全個室○ 宴会に⇒牛タン焼きと三元豚や宮城が堪能出来るコース4000円！ 接待に⇒親方おまかせコース6000円！ プレモル・地酒・本格焼酎等全て飲み放題付き",
+            "pr_long": "◆宴会におすすめのコース◆\n【宴会向け大人の特撰コース】8品150分プレモル・東北、全国の地酒・本格焼酎梅酒等飲み放題付きコース5000円→4000円（1名無料併用可）\n【和洋折衷コース】三元豚ステーキと若鶏ステーキ2種付\n季節香る和洋折衷9品150分モルツ・地酒・本格焼酎飲み放題付\n三元豚ステーキ付き9品2.5H[飲放]4000円→3500円 (１名無料併用可)\n【2014宴会極みコース】仙台牛ステーキと牛タン2種付\n仙台牛の炭火焼ステーキと牛タン焼き付豪華7品１８０分プレミアム飲み放題6000円→5000円（1名無料併用可）\n【親方おすすめコース】宮城地元厳選食材使用\n親方が厳選した旬の地元食材を使用したプレミアムなコース180分地酒飲み放題付6000円\n★更に極みコースは\u2026日本酒10種(田酒/伯楽星/綿屋など)\n本格焼酎10種(赤霧/吉兆宝山など)梅酒８種(山田十郎)等"
+        },
+        "code": {
+            "areacode": "AREA160",
+            "areaname": "東北",
+            "prefcode": "PREF04",
+            "prefname": "宮城県",
+            "areaname_s": "国分町",
+            "category_code_l": [
+                "RSFST09000",
+                "RSFST01000"
+            ],
+            "category_name_l": [
+                "居酒屋",
+                "和食"
+            ],
+            "category_code_s": [
+                "RSFST09004",
+                "RSFST01015"
+            ],
+            "category_name_s": [
+                "居酒屋",
+                "和食 その他"
+            ]
+        },
+        "equipment": "50人以上OK(着席時),個室あり,貸切可,宴会用食べ放題メニューあり,座敷席あり,座椅子あり,ソフトバンク,NTT ドコモ,au,23時以降も食事ができる,飲み放題メニューあり,誕生日特典あり,テイクアウト可,",
+        "budget": "3500",
+        "flags": {
+            "mobile_site": "1",
+            "mobile_coupon": "1",
+            "pc_coupon": "1"
+        }
+    }
+}

@@ -1,0 +1,68 @@
+{
+    "total_hit_count": "24086",
+    "hit_per_page": "1",
+    "page_offset": "1",
+    "rest": {
+        "@attributes": {"order": "0"},
+        "id": "h290904",
+        "update_date": "2014-07-18 19:59:53",
+        "name": "ラフィラ海鮮ビアガーデン",
+        "name_kana": "ラフィラカイセンビアガーデン",
+        "latitude": "43.052753",
+        "longitude": "141.356319",
+        "category": "花火見えるビアガーデン",
+        "url": "http://r.gnavi.co.jp/3k6xp7pu0000/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "url_mobile": "http://mobile.gnavi.co.jp/shop/h290904/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "image_url": {
+            "shop_image1": "http://apicache.gnavi.co.jp/image/rest/index.php?img=h290904v.jpg&sid=3k6xp7pu0000",
+            "shop_image2": "http://apicache.gnavi.co.jp/image/rest/index.php?img=h290904l.jpg&sid=3k6xp7pu0000",
+            "qrcode": "http://r.gnst.jp/tool/qr/?id=h290904&q=6"
+        },
+        "address": "〒064-0804 北海道札幌市中央区南4条西4 ラフィラ屋上",
+        "tel": "011-532-8877",
+        "fax": {},
+        "opentime": " 11:30～23:00(L.O.22:00),",
+        "holiday": "年中無休",
+        "access": {
+            "line": "札幌市営地下鉄南北線",
+            "station": "すすきの駅",
+            "station_exit": {},
+            "walk": "1",
+            "note": {}
+        },
+        "pr": {
+            "pr_short": "『すすきの駅直結』花火の見える屋上ビアガーデン グランドオープン ビアガーデンでは珍しい飲み放題1,500円！！",
+            "pr_long": "すすきの中心のビル『ラフィラ』の屋上でビアガーデンを5月末にオープン\n全750席の開放感のある店内\n『花火が見えるビアガーデン』\n原価で食べれる海鮮を豊富に取り揃えており炭火で食べられます！！\nビアガーデンなのに飲み放題もございます！！\n生ビール、モヒート、スパークリングが飲めてクーポン利用でなんと1,500円\nこれでお会計も気になりません！！\nその他焼肉やおつまみも豊富に取り揃えております。"
+        },
+        "code": {
+            "areacode": "AREA150",
+            "areaname": "北海道",
+            "prefcode": "PREF01",
+            "prefname": "北海道",
+            "areaname_s": "札幌すすきの",
+            "category_code_l": [
+                "RSFST03000",
+                "RSFST06000"
+            ],
+            "category_name_l": [
+                "すし・魚料理・シーフード",
+                "焼き鳥・肉料理・串料理"
+            ],
+            "category_code_s": [
+                "RSFST03003",
+                "RSFST06005"
+            ],
+            "category_name_s": [
+                "刺身・海鮮料理",
+                "炭火焼き・炉端焼き"
+            ]
+        },
+        "equipment": "NTT ドコモ,ソフトバンク,au,飲み放題メニューあり,宴会用飲み放題メニューあり,2,000円以内で宴会ができる,昼間の宴会・パーティ対応可,カジュアル,英語メニューあり,韓国語メニューあり,中国語（簡体字）メニューあり,中国語（繁体字）メニューあり,お子様連れ歓迎,日曜営業あり,テラス・屋外席あり,立ち飲みあり,夜景が見える,女子会,夜の接待,デート,2次会,記念日,合コン,お一人様,同窓会,歓迎会,送別会,お祝い事,家族,大人数,エンターテイメント,縁側席あり,野外施設あり,歓迎会・送別会,",
+        "budget": "2000",
+        "flags": {
+            "mobile_site": "1",
+            "mobile_coupon": "1",
+            "pc_coupon": "1"
+        }
+    }
+}

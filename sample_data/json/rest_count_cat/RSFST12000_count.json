@@ -1,0 +1,68 @@
+{
+    "total_hit_count": "11142",
+    "hit_per_page": "1",
+    "page_offset": "1",
+    "rest": {
+        "@attributes": {"order": "0"},
+        "id": "k581003",
+        "update_date": "2014-07-23 10:36:30",
+        "name": "産地直送こだわり食材 個室ダイニング まごころ 梅田本店 ぐるなびポイントでお会計できます。",
+        "name_kana": "コシツダイニングマゴコロウメダホンテン コシツダイニングマゴコロ ウメダホンテン ぐるなび",
+        "latitude": "34.699247",
+        "longitude": "135.504914",
+        "category": "産地直送・鮮度抜群和食",
+        "url": "http://r.gnavi.co.jp/k581003/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "url_mobile": "http://mobile.gnavi.co.jp/shop/k581003/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "image_url": {
+            "shop_image1": "http://apicache.gnavi.co.jp/image/rest/index.php?img=k581003v.jpg&sid=k581003",
+            "shop_image2": "http://apicache.gnavi.co.jp/image/rest/index.php?img=k581003l.gif&sid=k581003",
+            "qrcode": "http://r.gnst.jp/tool/qr/?id=k581003&q=6"
+        },
+        "address": "〒530-0027 大阪府大阪市北区堂山町4-12 白馬車ビル10F",
+        "tel": "06-6362-0550",
+        "fax": {},
+        "opentime": "月～木・日 17:00～24:00(L.O.23:00)<BR>金・土・祝前日 17:00～翌1:00(L.O.24:00),",
+        "holiday": "無",
+        "access": {
+            "line": "ＪＲ",
+            "station": "大阪駅",
+            "station_exit": {},
+            "walk": "5",
+            "note": {}
+        },
+        "pr": {
+            "pr_short": "梅田駅5分 完全個室2名～80名 読売ＴＶに取材・放映された直送鮮魚の店 宴会2h飲放付3000円～ 単品+2h飲放1000円 食べ飲み放題コース3000円 ご予約受付は朝10：00～",
+            "pr_long": "\u203bご予約のお電話は朝10：00～受付けております。\n読売ＴＶ「ほんわかテレビ」にて山口県『萩大島船団丸』より\n漁船直送の鮮魚の仕入れ先として紹介されました。\n2名～80名様までテーブル＆掘りごたつ完全個室\n会社宴会に最適な大部屋個室あり\n★食べ飲み放題コース 4000円⇒3000円♪\n \u203b平日限定！+500円で30分延長OK\n■宴会コース２時間飲放付■(\u203b税込み)\n和洋旬彩コース 4000円⇒3000円\n食彩巡りコース 4500円⇒3500円\n旬の宴コース  5000円⇒4000円\n美食コース  6000円⇒5000円\n\u203b各種宴会承ります。"
+        },
+        "code": {
+            "areacode": "AREA120",
+            "areaname": "関西",
+            "prefcode": "PREF27",
+            "prefname": "大阪府",
+            "areaname_s": "東通り・堂山",
+            "category_code_l": [
+                "RSFST09000",
+                "RSFST02000"
+            ],
+            "category_name_l": [
+                "居酒屋",
+                "日本料理・郷土料理"
+            ],
+            "category_code_s": [
+                "RSFST09004",
+                "RSFST02006"
+            ],
+            "category_name_s": [
+                "居酒屋",
+                "郷土料理"
+            ]
+        },
+        "equipment": "50人以上OK(着席時),個室あり,二人でも個室OK,完全個室あり,貸切可,宴会用飲み放題メニューあり,掘りごたつ席あり,3時間以上の宴会・パーティ可,ソフトバンク,NTT ドコモ,au,禁煙席あり,法事で利用可,結納で利用可,23時以降も食事ができる,日曜営業あり,カジュアル,お子様連れ歓迎,飲み放題メニューあり,誕生日特典あり,ビールマイスターがいる,食べ放題メニューあり,デザートの食べ放題あり,宴会用食べ放題メニューあり,予約の必要なし,中国語を話せるスタッフがいる,英語を話せるスタッフがいる,内覧歓迎,ヘルシーメニューご相談,国・宗教別メニューご相談,請求書払いご相談,ベジタリアンメニューご相談,女子会,夜の接待,デート,2次会,記念日,合コン,お一人様,同窓会,歓迎会,送別会,お祝い事,家族,大人数,エンターテイメント,歓迎会・送別会,",
+        "budget": "3000",
+        "flags": {
+            "mobile_site": "1",
+            "mobile_coupon": "1",
+            "pc_coupon": "1"
+        }
+    }
+}

@@ -1,0 +1,68 @@
+{
+    "total_hit_count": "69203",
+    "hit_per_page": "1",
+    "page_offset": "1",
+    "rest": {
+        "@attributes": {"order": "0"},
+        "id": "f524600",
+        "update_date": "2014-07-22 19:49:51",
+        "name": "九州創作酒場 博多 笑門",
+        "name_kana": "キュウシュウソウサクサカバ ハカタ ショウモン",
+        "latitude": "33.585569",
+        "longitude": "130.423881",
+        "category": "活魚&焼肉&大衆居酒屋",
+        "url": "http://r.gnavi.co.jp/f524600/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "url_mobile": "http://mobile.gnavi.co.jp/shop/f524600/?ak=OhyRGmRi18HDLj0eQF2KFPuGHnuMhmoJiXmmMUYcSPs%3D",
+        "image_url": {
+            "shop_image1": "http://apicache.gnavi.co.jp/image/rest/index.php?img=f524600v.jpg&sid=f524600",
+            "shop_image2": "http://apicache.gnavi.co.jp/image/rest/index.php?img=f524600l.jpg&sid=f524600",
+            "qrcode": "http://r.gnst.jp/tool/qr/?id=f524600&q=6"
+        },
+        "address": "〒812-0012 福岡県福岡市博多区博多駅中央街6-2 1F",
+        "tel": "092-433-4800",
+        "fax": "092-433-4801",
+        "opentime": "月～土 17:00～翌1:00(L.O.24:30)<BR>日・祝日 17:00～24:00(L.O.23:30),",
+        "holiday": "不定休日あり<BR>\u203b不定期にお休みを頂くことがございますので、店舗までお問い合わせ下さい。",
+        "access": {
+            "line": "ＪＲ",
+            "station": "博多駅",
+            "station_exit": "筑紫口",
+            "walk": "1",
+            "note": {}
+        },
+        "pr": {
+            "pr_short": "夏宴コース始まるよ♪ 呼子の活イカ姿造りや長浜市場直送のお刺身♪ 博多もつ鍋・博多水炊き等、九州の郷土料理をご用意！ 博多駅筑紫口より徒歩1分♪",
+            "pr_long": "夏だ！ビールだ！夏宴だ！焼肉に海鮮まで付いて・・・さらに！120分飲み放題付きで・・・\n\nこの価格 ■■■ ■■■ ■■■ ■■■\n■ ■ ■ ■ ■ ■ ■\n■■■ ■■■ ■■■ ■ ■\n■ ■ ■ ■ ■ ■\n■■■ ■■■ ■■■ ■■■ 円\n☆★☆夏宴コース120分飲み放題付き3980円⇒２９８０円★☆★\n●枝豆●大根サラダ●海鮮チヂミ●ポテトフライ●ゴボウの唐揚\n☆国産黒毛和牛上カルビ☆豚トロ☆鶏モモ☆海老☆イカ下足☆殻付きホタテ\n●プチ焼おにぎり●漬け物●柚子シャーベット\n今年も来た！アレが旨いこの季節！\n氷点下の世界へ・・・エクストラコールド！\n氷点下の世界があなたを待っている！\n最大120名様の予約OK♪総席数252席♪\n最高の笑顔と感謝の気持ちを込めてお客様をお出迎え♪"
+        },
+        "code": {
+            "areacode": "AREA140",
+            "areaname": "九州",
+            "prefcode": "PREF40",
+            "prefname": "福岡県",
+            "areaname_s": "博多駅",
+            "category_code_l": [
+                "RSFST09000",
+                "RSFST03000"
+            ],
+            "category_name_l": [
+                "居酒屋",
+                "すし・魚料理・シーフード"
+            ],
+            "category_code_s": [
+                "RSFST09004",
+                "RSFST03003"
+            ],
+            "category_name_s": [
+                "居酒屋",
+                "刺身・海鮮料理"
+            ]
+        },
+        "equipment": "50人以上OK(着席時),個室あり,完全個室あり,半個室あり,貸切可,宴会用飲み放題メニューあり,掘りごたつ席あり,ソフトバンク,3時間以上の宴会・パーティ可,昼間の宴会・パーティ対応可,NTT ドコモ,au,23時以降も食事ができる,英語メニューあり,英語メニューあり,中国語（簡体字）メニューあり,韓国語メニューあり,飲み放題メニューあり,内覧歓迎,喫煙席あり,日曜営業あり,カウンター席あり,女子会,昼の接待,夜の接待,デート,2次会,記念日,合コン,お一人様,同窓会,歓迎会,送別会,お祝い事,家族,大人数,不可,歓迎会・送別会,",
+        "budget": "3000",
+        "flags": {
+            "mobile_site": "1",
+            "mobile_coupon": "1",
+            "pc_coupon": "1"
+        }
+    }
+}
