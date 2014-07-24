@@ -16,7 +16,7 @@ angular.module('gnaviApp').
           }
         );
 
-    }
+    };
 
     var getRestCount = function(areaList, callback){
       var prom = [];
@@ -38,7 +38,7 @@ angular.module('gnaviApp').
           console.log(areaCountList);
           callback(areaCountList);
       });
-    }
+    };
 
     var tableSlice = function(data, params){
 

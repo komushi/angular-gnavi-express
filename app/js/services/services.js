@@ -85,7 +85,7 @@ var gnaviAPIservice = function($injectHttp, $injectQ) {
     };
 
     return gnaviAPI;
-}
+};
 
 
 var gnaviModule = angular.module('gnaviApp.services', []);
