@@ -16,8 +16,8 @@
   "scripts": {
     "postinstall": "bower install --allow-root",
 
-    "prestart": "npm install --unsafe-perm",
-    "start": "http-server ./app -p 9020 -d false -i true",
+    "prestart": "npm install",
+    "start": "http-server ./app -p 9000 -d false -i true",
 
 
     "pretest": "npm install",
