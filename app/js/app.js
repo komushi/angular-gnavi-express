@@ -16,6 +16,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 		when("/areas", {templateUrl: "views/areas.html", controller: "areasController"}).
 		when("/cats", {templateUrl: "views/cats.html", controller: "catsController"}).
 		when("/areasCats", {templateUrl: "views/areasCats.html", controller: "areasCatsController"}).
+		when("/catsAreas", {templateUrl: "views/catsAreas.html", controller: "catsAreasController"}).
 		otherwise({redirectTo: '/prefs'});
 }]);
 

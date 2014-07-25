@@ -1,7 +1,7 @@
 angular.module('gnaviApp').
 
   /* Prefs controller */
-  controller('areasCatsController', function($scope, gnaviAPIservice, ngTableParams) {
+  controller('catsAreasController', function($scope, gnaviAPIservice, ngTableParams) {
 
     var model = {
       chartData:[]
@@ -17,20 +17,20 @@ angular.module('gnaviApp').
     };
 
 
-    var getRestCount = function(areaCode, catList, callback){
+    var getRestCount = function(catCode, areaList, callback){
       var prom = [];
       var valueList = [];
 
-      catList.forEach(function (obj, i) {
+      areaList.forEach(function (obj, i) {
         if (obj.$selected)
         {
-          prom.push(getRest(areaCode, obj.category_l_code, function(data){
+          prom.push(getRest(obj.area_code, catCode, function(data){
               var jsonObj = angular.fromJson(
-                '["' + obj.category_l_name + 
+                '["' + obj.area_name + 
                 '",' + data.total_hit_count + ']');
 
               valueList.push(jsonObj);
-          }));          
+          }));
         }
       });
 
@@ -44,8 +44,8 @@ angular.module('gnaviApp').
     };
 
 
-    var pushChartData = function (areaObj) {
-      getRestCount(areaObj.area_code, $scope.tableCatParams.data, function (valueList) {
+    var pushChartData = function (catObj) {
+      getRestCount(catObj.category_l_code, $scope.tableAreaParams.data, function (valueList) {
 
         var series = {
           key:{},
@@ -53,7 +53,7 @@ angular.module('gnaviApp').
         }
 
         angular.extend(series, {
-          key: areaObj.area_name,
+          key: catObj.category_l_name,
           values: valueList
         });
 
@@ -75,25 +75,6 @@ angular.module('gnaviApp').
 
         // console.log(model.chartData);
 
-        if (selected)
-        {
-          pushChartData(data);
-        }
-        else
-        {
-          model.chartData.forEach(function (obj, i) {
-            if (obj.key === data.area_name)
-            {
-              model.chartData.splice(i, 1);
-              return;
-            }
-
-          });          
-        }
-    };
-
-    var changeSelectionCat = function(data, selected) {
-
         // if (selected)
         // {
         //   pushChartData(data);
@@ -109,39 +90,31 @@ angular.module('gnaviApp').
 
         //   });          
         // }
-        console.log("changeSelectionCat");
+    };
+
+    var changeSelectionCat = function(data, selected) {
+
+        if (selected)
+        {
+          pushChartData(data);
+        }
+        else
+        {
+          model.chartData.forEach(function (obj, i) {
+            if (obj.key === data.category_l_name)
+            {
+              model.chartData.splice(i, 1);
+              return;
+            }
+
+          });          
+        }
     };
 
     var initialize = function () {
-      gnaviAPIservice.getAreas().then(function(response) {
-        
-          var data = response.area;
-
-          var tableParams = 
-            new ngTableParams({
-                page: 1,            // show first page
-                count:10           // count per page
-            }, {
-                total: data.length, // length of data
-                getData: function($defer, params) {
-                    $defer.resolve(tableSlice(data, params));
-                }
-            });
-
-          angular.extend($scope, {
-            tableAreaParams: tableParams
-          });
-      });
-
       gnaviAPIservice.getCats().then(function(response) {
         
         var data = response.category_l;
-        data.forEach(function (obj, i) {
-          obj.$selected = true;
-        });
-
-
-        // angular.extend(model.catList, data);
 
         var tableParams = 
           new ngTableParams({
@@ -159,6 +132,30 @@ angular.module('gnaviApp').
         });
 
       });
+
+      gnaviAPIservice.getAreas().then(function(response) {
+        
+          var data = response.area;
+          data.forEach(function (obj, i) {
+            obj.$selected = true;
+          });
+
+          var tableParams = 
+            new ngTableParams({
+                page: 1,            // show first page
+                count:10           // count per page
+            }, {
+                total: data.length, // length of data
+                getData: function($defer, params) {
+                    $defer.resolve(tableSlice(data, params));
+                }
+            });
+
+          angular.extend($scope, {
+            tableAreaParams: tableParams
+          });
+      });
+
 
       angular.extend($scope, {
         model: model,

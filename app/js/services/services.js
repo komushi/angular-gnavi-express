@@ -99,6 +99,10 @@ var gnaviAPIservice = function($injectHttp, $injectQ) {
       return deferred.promise;
     };
 
+    // gnaviAPI.getRestByCatArea = function(catCode, areaCode) {
+    //   return gnaviAPI.getRestByAreaCat(areaCode, catCode);
+    // };
+
     return gnaviAPI;
 };
 
