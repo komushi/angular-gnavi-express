@@ -1,7 +1,7 @@
 # angular-gnavi
 
 ## Live Demo
-[DEMO](http://ks3001165.kimsufi.com/)
+[DEMO](http://goo.gl/HdEHI6)
 
 ## Getting Started
 
