@@ -17,7 +17,8 @@
     "postinstall": "bower install --allow-root",
 
     "prestart": "npm install --unsafe-perm",
-    "start": "http-server -p 9020",
+    "start": "http-server ./app -p 9020 -d false -i true",
+
 
     "pretest": "npm install",
     "test": "karma start test/karma.conf.js",

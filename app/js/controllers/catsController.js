@@ -7,7 +7,7 @@ angular.module('gnaviApp').
       catCountList:[]
     };
 
-    var getRest = function(catCode, catName, callback) {
+    var getRest = function(catCode, callback) {
         return gnaviAPIservice.getRestByCat(catCode).then(
           function(data) {
 
@@ -18,28 +18,24 @@ angular.module('gnaviApp').
 
     };
 
-
     var getRestCount = function(catList, callback){
-      var prom = [];
-      var catCountList = [];
+        var prom = [];
+        var catCountList = [];
 
-      
-      catList.forEach(function (obj, i) {
-          prom.push(getRest(obj.category_l_code, obj.category_l_name, function(data){
+        catList.forEach(function (obj, i) {
+            prom.push(getRest(obj.category_l_code, function(data){
+                var jsonObj = angular.fromJson(
+                    '{"category_l_name":"' + obj.category_l_name + 
+                    '","category_l_code":"' + obj.category_l_code + 
+                    '","count":' + data.total_hit_count + '}');
 
+                catCountList.push(jsonObj);
+            }));
+        });
 
-              var jsonObj = angular.fromJson(
-                '{"category_l_name":"' + obj.category_l_name + 
-                '","category_l_code":"' + obj.category_l_code + 
-                '","count":' + data.total_hit_count + '}');
-
-              catCountList.push(jsonObj);
-          }));
-      });
-      $q.all(prom).then(function () {
-
-          callback(catCountList);
-      });
+        $q.all(prom).then(function () {
+            callback(catCountList);
+        });
     };
 
     var tableSlice = function(data, params){
@@ -54,10 +50,10 @@ angular.module('gnaviApp').
         
         angular.extend(model.catCountList, catCountList);
 
-
         angular.extend($scope, {
           model: model
          });
+
       });
     };
 
@@ -81,8 +77,39 @@ angular.module('gnaviApp').
 
     var xAxisTickFormatFunction = function(){
         return function(d){
+          // console.log("d");
+          // console.log(d);
           return d3.time.format('%b')(new Date(d));
         }
+    };
+
+    var pushDummy = function(){
+      console.log("click12");
+        // var jsonObj =
+        //   {
+        //       "key": "Series 5",
+        //       "values": [
+        //           [
+        //               1025409600000,
+        //               10
+        //           ],
+        //           [
+        //               1028088000000,
+        //               16.3382185140371
+        //           ],
+        //           [
+        //               1030766400000,
+        //               15.9507873460847
+        //           ],
+        //           [
+        //               1033358400000,
+        //               11.569146943813
+        //           ],
+        //       ]
+        //   };
+          
+        //   $scope.exampleData.push(jsonObj);
+
     };
 
 $scope.exampleData =
@@ -344,6 +371,23 @@ $scope.exampleData =
         ]
     }
 ];
+
+
+    angular.extend($scope, {
+      
+      xAxisTickFormatFunction: xAxisTickFormatFunction,
+      xFunction: xFunction,
+      yFunction: yFunction,
+      descriptionFunction: descriptionFunction,
+      pushDummy: pushDummy
+
+    });
+      console.log("exampleData");
+      console.log($scope.exampleData);
+
+
+
+
     gnaviAPIservice.getCats().then(function(response) {
 
         var data = response.category_l;
@@ -362,11 +406,7 @@ $scope.exampleData =
         initData(data);
 
         angular.extend($scope, {
-          
-          tableParams: tableParams,
-          xFunction: xFunction,
-          yFunction: yFunction,
-          descriptionFunction: descriptionFunction
+          tableParams: tableParams
         });
     });    
 

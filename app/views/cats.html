@@ -3,6 +3,7 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <p><strong>カテゴリ別</strong></p>
+        <button type="button" class="close" ng-click="pushDummy()">push</button>
         <div>
             <nvd3-multi-bar-chart
                 data="exampleData"
@@ -10,7 +11,11 @@
                 showLabels="true"
                 xAxisTickFormat="xAxisTickFormatFunction()"
                 width="800"
-                height="550"
+                height="250"
+                labelType="key"
+                tooltips="true"
+                objectequality="true"
+                showLegend="true"
                 showXAxis="true"
                 showYAxis="true">
                     <svg></svg>

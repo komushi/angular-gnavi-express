@@ -7,16 +7,19 @@
     <link rel="stylesheet" href="bower_components/nvd3/nv.d3.min.css"/>
   
     <link rel="stylesheet" href="css/app.css" />
+	<!-- <base href="/"> -->
 </head>
 
 <body ng-app="gnaviApp">
 
 	<div class="container">
 		<ol class="breadcrumb">
-		  <li><a href="#/areas">エリア</a></li>
 		  <li><a href="#/prefs">都道府県</a></li>
+		  <li><a href="#/areas">エリア</a></li>
 		  <li><a href="#/cats">カテゴリ</a></li>
+		  <li><a href="#/areasCats">エリア対カテゴリ</a></li>
 		</ol>
+
 
 		<ng-view></ng-view>
 	</div>
@@ -32,5 +35,6 @@
 	<script src="js/controllers/areasController.js"></script>
 	<script src="js/controllers/prefsController.js"></script>
 	<script src="js/controllers/catsController.js"></script>
+	<script src="js/controllers/areasCatsController.js"></script>
 </body>
 </html>

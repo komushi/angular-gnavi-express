@@ -5,21 +5,45 @@ var app =  angular.module('gnaviApp', [
   'nvd3ChartDirectives'
 ]);
 
-app.config(['$routeProvider', function($routeProvider) {
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
 	// $locationProvider.html5Mode(true);
 	// $locationProvider.hashPrefix = '#';
 
 	$routeProvider.
-		// when("/", {templateUrl: "views/prefs.html", controller: "prefsController"}).
+		// when("/", {templateUrl: "views/areas.html", controller: "areasController"}).
 		when("/prefs", {templateUrl: "views/prefs.html", controller: "prefsController"}).
 		when("/areas", {templateUrl: "views/areas.html", controller: "areasController"}).
 		when("/cats", {templateUrl: "views/cats.html", controller: "catsController"}).
-		when("/drivers/:id", {templateUrl: "partials/driver.html", controller: "driverController"}).
+		when("/areasCats", {templateUrl: "views/areasCats.html", controller: "areasCatsController"}).
 		otherwise({redirectTo: '/prefs'});
 }]);
 
+/*
+*/
+// var app =  angular.module('gnaviApp', [
+//   'gnaviApp.services',
+//   'ngRoute',
+//   'ngTable',
+//   'nvd3ChartDirectives'
+// ]);
 
+// app.config(['$routeProvider', function($routeProvider) {
+
+// 	// $locationProvider.html5Mode(true);
+// 	// $locationProvider.hashPrefix = '#';
+
+// 	$routeProvider.
+// 		// when("/", {templateUrl: "views/prefs.html", controller: "prefsController"}).
+// 		when("/prefs", {templateUrl: "views/prefs.html", controller: "prefsController"}).
+// 		when("/areas", {templateUrl: "views/areas.html", controller: "areasController"}).
+// 		when("/cats", {templateUrl: "views/cats.html", controller: "catsController"}).
+// 		when("/areasCats", {templateUrl: "views/areasCats.html", controller: "areasCatsController"}).
+// 		otherwise({redirectTo: '/prefs'});
+// }]);
+
+/*
+*/
 // var app =  angular.module('gnaviApp', [
 //   'gnaviApp.services',
 //   'gnaviApp.controllers',
