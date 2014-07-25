@@ -35,4 +35,7 @@ body {
 .ng-table tr.emphasis td {
     background-color: #DDD;
     font-weight: bold;
-} 
+}
+.ng-table-rowselected tr {
+    cursor: pointer;
+}

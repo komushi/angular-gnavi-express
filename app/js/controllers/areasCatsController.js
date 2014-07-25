@@ -8,10 +8,6 @@ angular.module('gnaviApp').
       catList:[]
     };
 
-    // var catList = [];
-
-
-
     var getRest = function(areaCode, catCode, callback) {
         return gnaviAPIservice.getRestByAreaCat(areaCode, catCode).then(
           function(data) {
@@ -25,21 +21,20 @@ angular.module('gnaviApp').
     var getRestCount = function(areaCode, catList, callback){
       var prom = [];
       var valueList = [];
-     console.log(catList); 
+
       catList.forEach(function (obj, i) {
           prom.push(getRest(areaCode, obj.category_l_code, function(data){
-console.log(data);
-console.log(obj);
+// console.log(data);
+// console.log(obj);
               var jsonObj = angular.fromJson(
-                '[' + obj.category_l_name + 
-                ',' + data.total_hit_count + ']');
+                '["' + obj.category_l_name + 
+                '",' + data.total_hit_count + ']');
 
               valueList.push(jsonObj);
           }));
       });
 
       $q.all(prom).then(function () {
-
           callback(valueList);
       });
     };
@@ -49,20 +44,11 @@ console.log(obj);
       return data.slice((params.page() - 1) * params.count(), params.page() * params.count());
     };
 
-    var initData = function (data) {
-      getRestCount(data, function (catCountList) {
-        angular.extend(model.catCountList, catCountList);
-        
-        angular.extend($scope, {
-          model: model
-        });
-      });
-    };
 
-
-    var pushChartData = function () {
+    var pushChartData = function (areaObj) {
       // console.log($scope.area);
-      var areaObj = $scope.area;
+      // console.log(model);
+
       getRestCount(areaObj.area_code, model.catList, function (valueList) {
 
         var series = {
@@ -70,64 +56,28 @@ console.log(obj);
           values:[]
         }
 
-        angular.extend(seriesList, {
+        angular.extend(series, {
           key: areaObj.area_name,
           values: valueList
         });
 
         model.chartData.push(series);
 
+        console.log(model.chartData);
+
       });
     };
 
-
     var xAxisTickFormatFunction = function(){
         return function(d){
-          // console.log("d");
-          // console.log(d);
-          return d3.time.format('%b')(new Date(d));
+          return d;
         }
     };
 
-    var pushDummy = function(){
-
-        // var jsonObj =
-        //   {
-        //       "key": "Series 5",
-        //       "values": [
-        //           [
-        //               1025409600000,
-        //               10
-        //           ],
-        //           [
-        //               1028088000000,
-        //               16.3382185140371
-        //           ],
-        //           [
-        //               1030766400000,
-        //               15.9507873460847
-        //           ],
-        //           [
-        //               1033358400000,
-        //               11.569146943813
-        //           ],
-        //       ]
-        //   };
-          
-        //   $scope.exampleData.push(jsonObj);
-
-    };
-
-
-    // angular.extend($scope, {
-      
-    //   xAxisTickFormatFunction: xAxisTickFormatFunction,
-    //   xFunction: xFunction,
-    //   yFunction: yFunction,
-    //   descriptionFunction: descriptionFunction,
-    //   pushDummy: pushDummy
-
-    // });
+    var changeSelection = function(data) {
+        console.info(data);
+        pushChartData(data);
+    } 
 
     var initialize = function () {
       gnaviAPIservice.getAreas().then(function(response) {
@@ -145,8 +95,6 @@ console.log(obj);
                 }
             });
 
-          // initData(data);
-
           angular.extend($scope, {
             tableParams: tableParams
           });
@@ -162,8 +110,8 @@ console.log(obj);
 
       angular.extend($scope, {
         model: model,
-        pushDummy: pushDummy,
         pushChartData: pushChartData,
+        changeSelection: changeSelection,
         area:{
           area_code: "AREA110",
           area_name: "関東"
@@ -174,6 +122,4 @@ console.log(obj);
 
     initialize();
 
-      // console.log("model");
-      // console.log(model);
   });

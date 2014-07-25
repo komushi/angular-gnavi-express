@@ -8,28 +8,44 @@
   </div>
 </div>
 <div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p><strong>カテゴリ別</strong></p>
+        <div class="pull-right">
+            <nvd3-multi-bar-horizontal-chart
+                data="model.chartData"
+                id="pushChartId"
+                width="1000"
+                height="550"
+                labelType="key"
+                tooltips="true"
+                objectequality="true"
+                showLegend="true"
+                showXAxis="true"
+                showYAxis="true">
+                    <svg></svg>
+            </nvd3-multi-bar-horizontal-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
   <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-body">
         <p><strong>Page:</strong> {{tableParams.page()}}</p>
         <p><strong>Count per page:</strong> {{tableParams.count()}}</p>
         
-        <table ng-table="tableParams" class="table">
-        <tr ng-repeat="area in $data">
+        <table ng-table="tableParams" class="table ng-table-rowselected">
+        <tr ng-repeat="area in $data"
+            ng-click="area.$selected = !area.$selected; changeSelection(area)"
+            ng-class="{'active': area.$selected}">
             <td data-title="'Code'">{{area.area_code}}</td>
             <td data-title="'Name'">{{area.area_name}}</td>
         </tr>
         </table>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <p><strong>カテゴリ別</strong></p>
-        <div>
-
-        </div>
       </div>
     </div>
   </div>
