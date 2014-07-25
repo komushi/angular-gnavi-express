@@ -10,20 +10,20 @@ var gnaviAPIservice = function($injectHttp, $injectQ) {
     gnaviAPI.getPrefs = function() {
       return $http({
         method: 'JSONP', 
-        url: 'http://api.gnavi.co.jp/ver1/PrefSearchAPI/?keyid=23cf42cc2b30d584faae96e40544372e&format=json&callback=JSON_CALLBACK'
+        url: 'http://api.gnavi.co.jp/ver1/PrefSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9 &format=json&callback=JSON_CALLBACK'
       });
     };
 
     // gnaviAPI.getAreas = function() {
     //   return $http({
     //     method: 'JSONP',
-    //     url: 'http://api.gnavi.co.jp/ver1/AreaSearchAPI/?keyid=23cf42cc2b30d584faae96e40544372e&format=json&callback=JSON_CALLBACK'
+    //     url: 'http://api.gnavi.co.jp/ver1/AreaSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9 &format=json&callback=JSON_CALLBACK'
     //   });
     // }
 
     gnaviAPI.getAreas = function() {
       var deferred = $q.defer();
-      var uri = 'http://api.gnavi.co.jp/ver1/AreaSearchAPI/?keyid=23cf42cc2b30d584faae96e40544372e&format=json&callback=JSON_CALLBACK';
+      var uri = 'http://api.gnavi.co.jp/ver1/AreaSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9 &format=json&callback=JSON_CALLBACK';
       $http({
         method: 'JSONP', 
         url: uri
@@ -38,13 +38,13 @@ var gnaviAPIservice = function($injectHttp, $injectQ) {
     // gnaviAPI.getCats = function() {
     //   return $http({
     //     method: 'JSONP',
-    //     url: 'http://api.gnavi.co.jp/ver1/CategoryLargeSearchAPI/?keyid=23cf42cc2b30d584faae96e40544372e&format=json&callback=JSON_CALLBACK'
+    //     url: 'http://api.gnavi.co.jp/ver1/CategoryLargeSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9 &format=json&callback=JSON_CALLBACK'
     //   });
     // };
 
     gnaviAPI.getCats = function() {
       var deferred = $q.defer();
-      var uri = 'http://api.gnavi.co.jp/ver1/CategoryLargeSearchAPI/?keyid=23cf42cc2b30d584faae96e40544372e&format=json&callback=JSON_CALLBACK';
+      var uri = 'http://api.gnavi.co.jp/ver1/CategoryLargeSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9 &format=json&callback=JSON_CALLBACK';
       $http({
         method: 'JSONP', 
         url: uri
@@ -58,7 +58,7 @@ var gnaviAPIservice = function($injectHttp, $injectQ) {
 
     gnaviAPI.getRestByArea = function(areaCode) {
       var deferred = $q.defer();
-      var uri = 'http://api.gnavi.co.jp/ver1/RestSearchAPI/?keyid=23cf42cc2b30d584faae96e40544372e&area=' + areaCode + '&hit_per_page=1&format=json&callback=JSON_CALLBACK';
+      var uri = 'http://api.gnavi.co.jp/ver1/RestSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9 &area=' + areaCode + '&hit_per_page=1&format=json&callback=JSON_CALLBACK';
       $http({
         method: 'JSONP', 
         url: uri
@@ -72,7 +72,7 @@ var gnaviAPIservice = function($injectHttp, $injectQ) {
 
     gnaviAPI.getRestByCat = function(catCode) {
       var deferred = $q.defer();
-      var uri = 'http://api.gnavi.co.jp/ver1/RestSearchAPI/?keyid=23cf42cc2b30d584faae96e40544372e&category_l=' + catCode + '&hit_per_page=1&format=json&callback=JSON_CALLBACK';
+      var uri = 'http://api.gnavi.co.jp/ver1/RestSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9 &category_l=' + catCode + '&hit_per_page=1&format=json&callback=JSON_CALLBACK';
       $http({
         method: 'JSONP', 
         url: uri
@@ -86,7 +86,7 @@ var gnaviAPIservice = function($injectHttp, $injectQ) {
 
     gnaviAPI.getRestByAreaCat = function(areaCode, catCode) {
       var deferred = $q.defer();
-      var uri = 'http://api.gnavi.co.jp/ver1/RestSearchAPI/?keyid=23cf42cc2b30d584faae96e40544372e&category_l=' + catCode + '&area=' + areaCode + '&hit_per_page=1&format=json&callback=JSON_CALLBACK';
+      var uri = 'http://api.gnavi.co.jp/ver1/RestSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9 &category_l=' + catCode + '&area=' + areaCode + '&hit_per_page=1&format=json&callback=JSON_CALLBACK';
       
       $http({
         method: 'JSONP', 
