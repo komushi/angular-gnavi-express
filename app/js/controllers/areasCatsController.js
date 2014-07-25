@@ -62,9 +62,6 @@ angular.module('gnaviApp').
         });
 
         model.chartData.push(series);
-
-        console.log(model.chartData);
-
       });
     };
 
@@ -74,9 +71,32 @@ angular.module('gnaviApp').
         }
     };
 
-    var changeSelection = function(data) {
+    var changeSelection = function(data, selected) {
+        console.info("data");
         console.info(data);
-        pushChartData(data);
+        console.info("selected");
+        console.info(selected);
+
+        console.log(model.chartData);
+
+        if (selected)
+        {
+          pushChartData(data);
+        }
+        else
+        {
+          model.chartData.forEach(function (obj, i) {
+            if (obj.key === data.area_name)
+            {
+              model.chartData.splice(i, 1);
+              return;
+            }
+
+          });          
+        }
+
+
+        
     } 
 
     var initialize = function () {

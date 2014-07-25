@@ -2,15 +2,6 @@
   <div class="col-md-12">
     <div class="panel panel-default">
       <div class="panel-body">
-<button type="button" class="close" ng-click="pushChartData()">{{area}}</button>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <div class="panel panel-default">
-      <div class="panel-body">
         <p><strong>カテゴリ別</strong></p>
         <div class="pull-right">
             <nvd3-multi-bar-horizontal-chart
@@ -40,7 +31,7 @@
         
         <table ng-table="tableParams" class="table ng-table-rowselected">
         <tr ng-repeat="area in $data"
-            ng-click="area.$selected = !area.$selected; changeSelection(area)"
+            ng-click="area.$selected = !area.$selected; changeSelection(area, area.$selected)"
             ng-class="{'active': area.$selected}">
             <td data-title="'Code'">{{area.area_code}}</td>
             <td data-title="'Name'">{{area.area_name}}</td>
