@@ -7,6 +7,8 @@ angular.module('gnaviApp').
       chartData:[]
     };
 
+    var catList = [];
+
     var getRest = function(areaCode, catCode, callback) {
         return gnaviAPIservice.getRestByAreaCat(areaCode, catCode).then(
           function(data) {
@@ -45,7 +47,7 @@ angular.module('gnaviApp').
 
 
     var pushChartData = function (areaObj) {
-      getRestCount(areaObj.area_code, $scope.tableCatParams.data, function (valueList) {
+      getRestCount(areaObj.area_code, catList, function (valueList) {
 
         var series = {
           key:{},
@@ -109,14 +111,12 @@ angular.module('gnaviApp').
 
         //   });          
         // }
-        console.log("changeSelectionCat");
     };
 
     var initialize = function () {
       gnaviAPIservice.getAreas().then(function(response) {
         
           var data = response.area;
-
           var tableParams = 
             new ngTableParams({
                 page: 1,            // show first page
@@ -135,8 +135,8 @@ angular.module('gnaviApp').
 
       gnaviAPIservice.getCats().then(function(response) {
         
-        var data = response.category_l;
-        data.forEach(function (obj, i) {
+        catList = response.category_l;
+        catList.forEach(function (obj, i) {
           obj.$selected = true;
         });
 
@@ -148,9 +148,9 @@ angular.module('gnaviApp').
               page: 1,            // show first page
               count:10           // count per page
           }, {
-              total: data.length, // length of data
+              total: catList.length, // length of data
               getData: function($defer, params) {
-                  $defer.resolve(tableSlice(data, params));
+                  $defer.resolve(tableSlice(catList, params));
               }
           });
 
