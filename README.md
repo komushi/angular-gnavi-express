@@ -1,4 +1,4 @@
-# angular-gnavi
+# angular-gnavi express version
 
 ## Live Demo
 [DEMO](http://goo.gl/HdEHI6)

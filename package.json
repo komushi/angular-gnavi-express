@@ -5,18 +5,16 @@
   "description": "A gnavi project for AngularJS",
   "repository": "https://github.com/komushi/angular-gnavi",
   "license": "MIT",
-  "devDependencies": {
-    "http-server": "^0.6.1",
+  "dependencies": {
+    "express": "~4.0.0",
     "bower": "^1.3.1"
   },
   "scripts": {
     "postinstall": "bower install --allow-root",
 
     "prestart": "npm install",
-    "start": "http-server ./app -p 9000 -d false -i true",
+    "start": "node server.js",
 
-
-    "pretest": "npm install",
 
     "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update"
