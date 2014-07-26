@@ -72,7 +72,7 @@ angular.module('gnaviApp').
     var changeSelectionArea = function(data, selected) {
         // console.info("data");
         // console.info(data);
-        // console.info("selected");
+        // console.log("selected");
         // console.info(selected);
 
         // console.log(model.chartData);

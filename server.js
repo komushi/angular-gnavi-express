@@ -5,21 +5,12 @@ var app = express();
 
 
 // Config
+app.use(express.static(path.join(application_root, "/app")));
 
-app.configure(function () {
-  app.use(express.bodyParser());
-  app.use(express.methodOverride());
-  app.use(app.router);
-  app.use(express.static(path.join(application_root, "app")));
-  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+app.get('/api', function (req, res) {
+   res.send('Ecomm API is running');
 });
-
-app.get('/', function(req, res) {
-  res.type('text/plain');
-  res.send('i am a beautiful butterfly');
-});
-
-app.listen(process.env.PORT || 4730);
+app.listen(process.env.PORT || 9000);
 
 // app.get('/getangularusers', function (req, res) {
 //   res.header("Access-Control-Allow-Origin", "http://localhost");
@@ -65,4 +56,4 @@ app.listen(process.env.PORT || 4730);
 //   });
 // });
 
-app.listen(1212);
+// app.listen(1212);
