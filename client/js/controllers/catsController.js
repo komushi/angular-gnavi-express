@@ -94,7 +94,6 @@ angular.module('gnaviApp').
 
     });
 
-
     gnaviAPIservice.getCats().then(function(response) {
 
         var data = response.category_l;

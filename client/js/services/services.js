@@ -9,23 +9,16 @@ var gnaviAPIservice = function($injectHttp, $injectQ) {
 
     gnaviAPI.getPrefs = function() {
       return $http({
-        method: 'JSONP', 
-        url: 'http://api.gnavi.co.jp/ver1/PrefSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9&format=json&callback=JSON_CALLBACK'
+        method: 'GET', 
+        url: 'http://localhost:9000/getGnaviPrefs'
       });
     };
 
-    // gnaviAPI.getAreas = function() {
-    //   return $http({
-    //     method: 'JSONP',
-    //     url: 'http://api.gnavi.co.jp/ver1/AreaSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9&format=json&callback=JSON_CALLBACK'
-    //   });
-    // }
-
     gnaviAPI.getAreas = function() {
       var deferred = $q.defer();
-      var uri = 'http://api.gnavi.co.jp/ver1/AreaSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9&format=json&callback=JSON_CALLBACK';
+      var uri = 'http://localhost:9000/getGnaviAreas';
       $http({
-        method: 'JSONP', 
+        method: 'GET', 
         url: uri
       }).success(function (response) {
         deferred.resolve(response);
@@ -35,18 +28,11 @@ var gnaviAPIservice = function($injectHttp, $injectQ) {
       return deferred.promise;
     };
 
-    // gnaviAPI.getCats = function() {
-    //   return $http({
-    //     method: 'JSONP',
-    //     url: 'http://api.gnavi.co.jp/ver1/CategoryLargeSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9&format=json&callback=JSON_CALLBACK'
-    //   });
-    // };
-
     gnaviAPI.getCats = function() {
       var deferred = $q.defer();
-      var uri = 'http://api.gnavi.co.jp/ver1/CategoryLargeSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9&format=json&callback=JSON_CALLBACK';
+      var uri = 'http://localhost:9000/getGnaviCats';
       $http({
-        method: 'JSONP', 
+        method: 'GET', 
         url: uri
       }).success(function (response) {
         deferred.resolve(response);
@@ -58,9 +44,9 @@ var gnaviAPIservice = function($injectHttp, $injectQ) {
 
     gnaviAPI.getRestByArea = function(areaCode) {
       var deferred = $q.defer();
-      var uri = 'http://api.gnavi.co.jp/ver1/RestSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9&area=' + areaCode + '&hit_per_page=1&format=json&callback=JSON_CALLBACK';
+      var uri = 'http://localhost:9000/getGnaviRestByArea/?area=' + areaCode;
       $http({
-        method: 'JSONP', 
+        method: 'GET', 
         url: uri
       }).success(function (response) {
         deferred.resolve(response);
@@ -72,9 +58,9 @@ var gnaviAPIservice = function($injectHttp, $injectQ) {
 
     gnaviAPI.getRestByCat = function(catCode) {
       var deferred = $q.defer();
-      var uri = 'http://api.gnavi.co.jp/ver1/RestSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9&category_l=' + catCode + '&hit_per_page=1&format=json&callback=JSON_CALLBACK';
+      var uri = 'http://localhost:9000/getGnaviRestByCat/?category_l=' + catCode;
       $http({
-        method: 'JSONP', 
+        method: 'GET', 
         url: uri
       }).success(function (response) {
         deferred.resolve(response);
@@ -86,10 +72,12 @@ var gnaviAPIservice = function($injectHttp, $injectQ) {
 
     gnaviAPI.getRestByAreaCat = function(areaCode, catCode) {
       var deferred = $q.defer();
-      var uri = 'http://api.gnavi.co.jp/ver1/RestSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9&category_l=' + catCode + '&area=' + areaCode + '&hit_per_page=1&format=json&callback=JSON_CALLBACK';
+      var uri = 'http://localhost:9000/getGnaviRestByAreaCat/?category_l=' + catCode + '&area=' + areaCode;
+
+      // var uri = 'http://api.gnavi.co.jp/ver1/RestSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9&category_l=' + catCode + '&area=' + areaCode + '&hit_per_page=1&format=json&callback=JSON_CALLBACK';
       
       $http({
-        method: 'JSONP', 
+        method: 'GET', 
         url: uri
       }).success(function (response) {
         deferred.resolve(response);
@@ -98,10 +86,6 @@ var gnaviAPIservice = function($injectHttp, $injectQ) {
       });
       return deferred.promise;
     };
-
-    // gnaviAPI.getRestByCatArea = function(catCode, areaCode) {
-    //   return gnaviAPI.getRestByAreaCat(areaCode, catCode);
-    // };
 
     return gnaviAPI;
 };
