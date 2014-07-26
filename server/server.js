@@ -28,10 +28,6 @@ app.get('/api', function (req, res) {
 
 
 app.get('/getGnaviPrefs', function (req, res) {
-  // res.header("Access-Control-Allow-Origin", "*");
-  // res.header("Access-Control-Allow-Methods", "GET, POST");
-
-
   var url = "http://api.gnavi.co.jp/ver1/PrefSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9&format=json";
   request(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -49,10 +45,6 @@ app.get('/getGnaviPrefs', function (req, res) {
 });
 
 app.get('/getGnaviAreas', function (req, res) {
-  // res.header("Access-Control-Allow-Origin", "*");
-  // res.header("Access-Control-Allow-Methods", "GET, POST");
-
-
   var url = "http://api.gnavi.co.jp/ver1/AreaSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9&format=json";
   request(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -70,9 +62,6 @@ app.get('/getGnaviAreas', function (req, res) {
 });
 
 app.get('/getGnaviCats', function (req, res) {
-  // res.header("Access-Control-Allow-Origin", "*");
-  // res.header("Access-Control-Allow-Methods", "GET, POST");
-
   var url = "http://api.gnavi.co.jp/ver1/CategoryLargeSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9&format=json";
   request(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -90,9 +79,6 @@ app.get('/getGnaviCats', function (req, res) {
 });
 
 app.get('/getGnaviRestByArea', function (req, res) {
-  // res.header("Access-Control-Allow-Origin", "*");
-  // res.header("Access-Control-Allow-Methods", "GET, POST");
-
   var url = "http://api.gnavi.co.jp/ver1/RestSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9&area=" + req.query.area + "&hit_per_page=1&format=json";
   request(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -110,9 +96,6 @@ app.get('/getGnaviRestByArea', function (req, res) {
 });
 
 app.get('/getGnaviRestByCat', function (req, res) {
-  // res.header("Access-Control-Allow-Origin", "*");
-  // res.header("Access-Control-Allow-Methods", "GET, POST");
-
   var url = "http://api.gnavi.co.jp/ver1/RestSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9&category_l=" + req.query.category_l + "&hit_per_page=1&format=json";
   request(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -130,9 +113,6 @@ app.get('/getGnaviRestByCat', function (req, res) {
 });
 
 app.get('/getGnaviRestByAreaCat', function (req, res) {
-  // res.header("Access-Control-Allow-Origin", "*");
-  // res.header("Access-Control-Allow-Methods", "GET, POST");
-
   var url = "http://api.gnavi.co.jp/ver1/RestSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9&category_l=" + req.query.category_l + "&area=" + req.query.area + "&hit_per_page=1&format=json";
   request(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {

@@ -73,8 +73,6 @@ var gnaviAPIservice = function($injectHttp, $injectQ) {
     gnaviAPI.getRestByAreaCat = function(areaCode, catCode) {
       var deferred = $q.defer();
       var uri = '/getGnaviRestByAreaCat/?category_l=' + catCode + '&area=' + areaCode;
-
-      // var uri = 'http://api.gnavi.co.jp/ver1/RestSearchAPI/?keyid=3752190c2d640eb83d502e192085ccf9&category_l=' + catCode + '&area=' + areaCode + '&hit_per_page=1&format=json&callback=JSON_CALLBACK';
       
       $http({
         method: 'GET', 
