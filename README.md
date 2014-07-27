@@ -5,11 +5,12 @@
 
 ## Scenario
 
-1. 都道府県
-2. エリア
-3. カテゴリ
-4. エリア対カテゴリ
-5. カテゴリ対エリア
+* 都道府県
+* エリア
+* カテゴリ
+* エリア対カテゴリ
+![Image of Yaktocat](/images/areasCats.png)
+* カテゴリ対エリア
 
 ## Getting Started
 
