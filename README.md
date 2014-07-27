@@ -6,15 +6,15 @@
 ## Screenshots
 
 ### 都道府県
-![都道府県](/images/prefs.png)
+![都道府県](https://github.com/komushi/angular-gnavi-express/raw/master/images/prefs.png)
 ### エリア
-![エリア](/images/areas.png)
+![エリア](https://github.com/komushi/angular-gnavi-express/raw/master/images/areas.png)
 ### カテゴリ
-![カテゴリ](/images/cats.png)
+![カテゴリ](https://github.com/komushi/angular-gnavi-express/raw/master/images/cats.png)
 ### エリア対カテゴリ
-![エリア対カテゴリ](/images/areasCats.png)
+![エリア対カテゴリ](https://github.com/komushi/angular-gnavi-express/raw/master/images/areasCats.png)
 ### カテゴリ対エリア
-![カテゴリ対エリア](/images/catsAreas.png)
+![カテゴリ対エリア](https://github.com/komushi/angular-gnavi-express/raw/master/images/catsAreas.png)
 
 ## Getting Started
 
