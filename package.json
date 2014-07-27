@@ -2,8 +2,8 @@
   "name": "angular-gnavi-express",
   "private": true,
   "version": "0.0.0",
-  "description": "A gnavi project for AngularJS",
-  "repository": "https://github.com/komushi/angular-gnavi-express",
+  "description": "Analytics for public Rest data source",
+  "repository": "http://komushi.github.io/angular-gnavi-express/",
   "license": "MIT",
   "dependencies": {
     "express": "~4.0.0",

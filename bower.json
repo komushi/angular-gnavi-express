@@ -1,16 +1,13 @@
 {
-  "name": "angular-seed",
-  "description": "A starter project for AngularJS",
+  "name": "angular-gnavi-express",
   "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "description": "Analytics for public Rest data source",
+  "homepage": "http://komushi.github.io/angular-gnavi-express/",
   "license": "MIT",
   "private": true,
   "dependencies": {
     "angular": "1.2.x",
     "angular-route": "1.2.x",
-    "angular-loader": "1.2.x",
-    "angular-mocks": "~1.2.x",
-    "html5-boilerplate": "~4.3.0",
     "bootstrap": "~3.2.0",
     "ng-table": "~0.3.3",
     "angularjs-nvd3-directives": "~0.0.7"
