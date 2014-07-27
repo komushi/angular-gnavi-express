@@ -3,6 +3,14 @@
 ## Live Demo
 [DEMO](http://angular-gnavi-express.herokuapp.com/)
 
+## Scenario
+
+1. 都道府県
+2. エリア
+3. カテゴリ
+4. エリア対カテゴリ
+5. カテゴリ対エリア
+
 ## Getting Started
 
 All you need to do is to clone this repository,
