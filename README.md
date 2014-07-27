@@ -3,14 +3,18 @@
 ## Live Demo
 [DEMO](http://angular-gnavi-express.herokuapp.com/)
 
-## Scenario
+## Screenshots
 
 * 都道府県
+[![都道府県](/images/prefs.png)]
 * エリア
+[![エリア](/images/areas.png)]
 * カテゴリ
+[![カテゴリ](/images/cats.png)]
 * エリア対カテゴリ
-![Image of Yaktocat](/images/areasCats.png)
+[![エリア対カテゴリ](/images/areasCats.png)]
 * カテゴリ対エリア
+[![カテゴリ対エリア](/images/catsAreas.png)]
 
 ## Getting Started
 
