@@ -1,7 +1,10 @@
 var application_root = __dirname;
 var express = require("express");
 var request = require('request');
-var session = require('express-session');
+var expressSession = require('express-session');
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var sessionStore  = new expressSession.MemoryStore;
 var path = require("path");
 var app = express();
 
@@ -93,11 +96,9 @@ function ensureAuthenticated(req, res, next) {
 // Config
 app.use(allowCrossDomain);
 app.use(express.static(path.join(application_root, "../client")));
-
-app.use(session({ secret: 'keyboard cat',
-          resave: false,
-          saveUninitialized: true}));
-
+app.use(bodyParser());
+app.use(cookieParser());
+app.use(expressSession({ secret: 'somesecretmagicword', store: sessionStore}));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -124,7 +125,7 @@ app.get('/auth/cloudfoundry/callback', passport.authenticate('pivotalcf', {
     failureRedirect: '/login'
 }), function(req, res) {
   console.log("callback");
-    res.redirect('/api');
+    res.redirect('/');
 });
 
 app.get('/login', function(req, res) {
