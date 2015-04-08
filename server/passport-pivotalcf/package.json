@@ -1,0 +1,30 @@
+{
+  "name": "passport-pivotalcf",
+  "version": "0.0.1",
+  "description": "Pivotal Cloud Foundry UAA OAuth2 authentication strategy for Passport.",
+  "author": {
+    "name": "Lei Xu",
+    "email": "komushi@gmail.com"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "main": "./lib",
+  "dependencies": {
+    "pkginfo": "0.2.x",
+    "passport-oauth": "0.1.x"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "keywords": [
+    "passport",
+    "cloudfoundry",
+    "auth",
+    "authn",
+    "authentication",
+    "identity",
+    "oauth2",
+    "oauth 2.0"
+  ]
+}
