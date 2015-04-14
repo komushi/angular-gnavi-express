@@ -1,18 +1,13 @@
-var application_root = __dirname;
 var express = require("express");
 var request = require('request');
 var expressSession = require('express-session');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
-var sessionStore  = new expressSession.MemoryStore;
 var path = require("path");
-var app = express();
-
-var passport = require('passport');
-var CloudFoundryStrategy = require("./passport-pivotalcf").Strategy;
+var util = require('util');
 
 //Set Cloud Foundry app's clientID
-var CF_CLIENT_ID = 'my_web_app';
+var CF_CLIENT_ID = 'newapp';
 
 //Set Cloud Foundry app's clientSecret
 var CF_CLIENT_SECRET = 'password';
@@ -22,6 +17,56 @@ var CF_CLIENT_SECRET = 'password';
 // then, you should have a HTTP GET endpoint like: app.get('/auth/cloudfoundry/callback', callback))
 //
 var CF_CALLBACK_URL = '/auth/cloudfoundry/callback';
+
+var CF_ROUTE_URL = '/auth/cloudfoundry';
+
+var CF_LOGIN_URL = '/login';
+
+var CF_AUTHORIZATION_URL = 'http://localhost:8080/uaa/oauth/authorize';
+
+var CF_TOKEN_URL = 'http://localhost:8080/uaa/oauth/token';
+
+var CF_LOGOUT_URL = 'http://localhost:8080/uaa/logout.do?redirect=';
+
+var port = (process.env.VCAP_APP_PORT || 9000);
+var host = (process.env.VCAP_APP_HOST || 'localhost');
+var homeURL = JSON.parse(process.env.VCAP_APPLICATION || '{"uris":["' + 'http://' + host + ':' + port + '"]}').uris[0];
+var loginURL = homeURL + CF_LOGIN_URL;
+
+
+
+var CloudFoundryStrategy = require("./passport-pivotalcf").Strategy;
+
+// Use the CloudFoundryStrategy within Passport.
+//   Strategies in Passport require a `verify` function, which accept
+//   credentials (in this case, an accessToken, refreshToken, and CloudFoundry
+//   profile), and invoke a callback with a user object.
+var cfStrategy = new CloudFoundryStrategy({
+    authorizationURL : CF_AUTHORIZATION_URL,
+    tokenURL : CF_TOKEN_URL,
+    logoutURL : CF_LOGOUT_URL,
+    clientID: CF_CLIENT_ID,
+    clientSecret: CF_CLIENT_SECRET,
+    callbackURL: CF_CALLBACK_URL,
+    grant_type: 'authorization_code',
+    skipUserProfile: false
+}, function(accessToken, refreshToken, profile, done) {
+
+
+    // asynchronous verification, for effect...
+    process.nextTick(function() {
+
+        // To keep the example simple, the user's CloudFoundry profile is returned to
+        // represent the logged-in user.  In a typical application, you would want
+        // to associate the CloudFoundry account with a user record in your database,
+        // and return that user instead.
+      profile.accessToken = accessToken;
+      profile.refreshToken = refreshToken;
+      return done(null, profile);
+    });
+});
+
+var passport = require('passport');
 
 // Passport session setup.
 //   To support persistent login sessions, Passport needs to be able to
@@ -38,38 +83,10 @@ passport.deserializeUser(function(obj, done) {
     done(null, obj);
 });
 
-
-
-
-
-// Use the CloudFoundryStrategy within Passport.
-//   Strategies in Passport require a `verify` function, which accept
-//   credentials (in this case, an accessToken, refreshToken, and CloudFoundry
-//   profile), and invoke a callback with a user object.
-var cfStrategy = new CloudFoundryStrategy({
-    authorizationURL : 'http://localhost:8080/uaa/oauth/authorize',
-    tokenURL : 'http://localhost:8080/uaa/oauth/token',
-    clientID: CF_CLIENT_ID,
-    clientSecret: CF_CLIENT_SECRET,
-    callbackURL: CF_CALLBACK_URL,
-    grant_type: 'authorization_code'
-}, function(accessToken, refreshToken, profile, done) {
-
-    console.log("abc");
-
-    // asynchronous verification, for effect...
-    process.nextTick(function() {
-
-        // To keep the example simple, the user's CloudFoundry profile is returned to
-        // represent the logged-in user.  In a typical application, you would want
-        // to associate the CloudFoundry account with a user record in your database,
-        // and return that user instead.
-        return done(null, profile);
-    });
-});
-
 passport.use("pivotalcf", cfStrategy);
 
+
+var app = express();
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
@@ -84,31 +101,37 @@ var allowCrossDomain = function(req, res, next) {
     }
 };
 
-function ensureAuthenticated(req, res, next) {
-  if(!req.isAuthenticated()) {
-              req.session.originalUrl = req.originalUrl;
-    res.redirect('/login');
-  } else {
-    return next();
-  }
-}
 
 // Config
 app.use(allowCrossDomain);
+var application_root = __dirname;
 app.use(express.static(path.join(application_root, "../client")));
 app.use(bodyParser());
 app.use(cookieParser());
+var sessionStore  = new expressSession.MemoryStore;
 app.use(expressSession({ secret: 'somesecretmagicword', store: sessionStore}));
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+
+var ensureAuthenticated = function(req, res, next) {
+console.log(util.inspect(req.session, false, null));
+console.log(util.inspect(req.originalUrl, false, null));
+  if(!req.isAuthenticated()) {
+              req.session.originalUrl = req.originalUrl;
+    res.redirect(CF_LOGIN_URL);
+  } else {
+    return next();
+  }
+};
 
 // GET /auth/cloudfoundry
 //   Use passport.authenticate() as route middleware to authenticate the
 //   request.  The first step in CloudFoundry authentication will involve
 //   redirecting the user to angellist.co.  After authorization, CloudFoundry
 //   will redirect the user back to this application at /auth/angellist/callback
-app.get('/auth/cloudfoundry', passport.authenticate('pivotalcf'), function(req, res) {
+app.get(CF_ROUTE_URL, passport.authenticate('pivotalcf'), function(req, res) {
     // The request will be redirected to CloudFoundry for authentication, so this
     // function will not be called.
 });
@@ -120,41 +143,43 @@ app.get('/auth/cloudfoundry', passport.authenticate('pivotalcf'), function(req, 
 //   request.  If authentication fails, the user will be redirected back to the
 //   login page.  Otherwise, the primary route function function will be called,
 //   which, in this example, will redirect the user to the home page.
-app.get('/auth/cloudfoundry/callback', passport.authenticate('pivotalcf', {
+app.get(CF_CALLBACK_URL, passport.authenticate('pivotalcf', {
     successRedirect: '/api',
-    failureRedirect: '/login'
+    failureRedirect: CF_LOGIN_URL
 }), function(req, res) {
   console.log("callback");
-    res.redirect('/');
+    res.redirect('/api');
 });
 
 app.get('/login', function(req, res) {
-    req.session.destroy();
-    req.logout();
-    cfStrategy.reset(); //reset auth tokens
+    // req.session.destroy();
+    // req.logout();
+    // cfStrategy.reset(); //reset auth tokens
+
+    // console.log(req.session);
 
     res.send('<html><body><a href="/auth/cloudfoundry">Sign in with Pivotal CF</a></body></html>');
 
-    // res.render('login', {
-    //     user: req.user
-    // });
 });
 
 app.get('/logout', function(req, res) {
-    res.redirect('/login');
+    
+    
+    req.session.destroy(function (err) {
+      if (err) throw new Exception('Failed to logout ', err);
+
+      req.logout();
+      cfStrategy.reset();
+      res.redirect(CF_LOGOUT_URL + loginURL); 
+    });
+
+    
 });
 
 app.get('/api', ensureAuthenticated, function(req, res) {
-   res.send(req.session);
-   // res.send('REST API is running');
-   console.log("Hello World");
+   res.send('<html><body><a href="/logout">' + req.session.passport.user.given_name + ' Log Out</a></body></html>');
 
 });
-
-// app.get('/api', function (req, res) {
-//    res.send('REST API is running');
-//    console.log("Hello World");
-// });
 
 
 app.get('/getGnaviPrefs', function (req, res) {
@@ -260,6 +285,6 @@ app.get('/getGnaviRestByAreaCat', function (req, res) {
 });
 
 
-var server = app.listen((process.env.PORT || 9000), function() {
-  console.log('Express server listening on port ' + server.address().port);
+var server = app.listen(port, host, function() {
+  console.log('Express server listening on ' + server.address().port);
 });

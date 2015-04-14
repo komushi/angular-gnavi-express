@@ -8,6 +8,7 @@ var OAuth2Strategy = require('passport-oauth').OAuth2Strategy,
     util = require('util');
 
 var PROVIDER = 'pivotalcf',
+    SSO_LOGOUT_URL = 'http://localhost:8080/uaa/logout.do',
     SSO_AUTHORIZATION_URL = 'http://localhost:8080/uaa/oauth/authorize',
     SSO_TOKEN_URL = 'http://localhost:8080/uaa/oauth/token',
     SSO_PROFILE_URL = 'http://localhost:8080/uaa/userinfo';
@@ -17,6 +18,7 @@ function Strategy(options, verify) {
     options.authorizationURL = options.authorizationURL || SSO_AUTHORIZATION_URL;
     options.tokenURL = options.tokenURL || SSO_TOKEN_URL;
     options.profileURL = options.profileURL || SSO_PROFILE_URL;
+    options.logoutURL = options.logoutURL || SSO_LOGOUT_URL;
     //options.scope = options.scope || ['profile'];
 
     //Send clientID & clientSecret in 'Authorization' header
@@ -40,7 +42,9 @@ function Strategy(options, verify) {
     this._oauth2.useAuthorizationHeaderforGET(true);
 
     //Set default userProfileURI (this is /info endpoint for cloudfoundry.COM)
-    this._userProfileURI = options.profileURL || 'http://localhost:8080/uaa/userinfo';
+    this._userProfileURI = options.profileURL;
+
+    this._logoutURL = options.logoutURL;
     
 }
 
@@ -63,16 +67,10 @@ util.inherits(Strategy, OAuth2Strategy);
 Strategy.prototype.userProfile = function (accessToken, done) {
     this._oauth2.get(this._userProfileURI, accessToken, function (err, body, res) {
         if (err) {
-            console.log("err");
-            console.log(err);
             return done(err);
         }
 
         try {
-            console.log("body");
-            console.log(body);
-            console.log("accessToken");
-            console.log(accessToken);
             done(null, JSON.parse(body));
         } catch (e) {
             done(e);
@@ -81,8 +79,15 @@ Strategy.prototype.userProfile = function (accessToken, done) {
 };
 
 Strategy.prototype.reset = function () {
+    
+
+    console.log(util.inspect(this._origCustomHeader, false, null));
+    console.log(util.inspect(this._oauth2._customHeaders, false, null));
+
     this._oauth2._customHeaders = {};
     this._oauth2._customHeaders['Authorization'] = this._origCustomHeader['Authorization'];
+    
+
 };
 
 Strategy.prototype.setUserProfileURI = function (userProfileURI) {
