@@ -1,0 +1,38 @@
+{
+  "name": "passport-pivotalcf-oauth2",
+  "version": "0.0.1",
+  "description": "Pivotal CF OAuth 2.0 authentication strategy for Passport.",
+  "keywords": [
+    "passport",
+    "auth",
+    "authn",
+    "authentication",
+    "authz",
+    "authorization",
+    "oauth",
+    "oauth2",
+    "Pivotal",
+    "Pivotal CF",
+    "cloud foundry"
+  ],
+  "author": "Lei Xu <komushi@gmail.com>",
+  "repository":{
+    "type": "github",
+    "url": "https://github.com/komushi/passport-pivotalcf-oauth2"  
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "main": "./lib",
+  "dependencies": {
+    "passport-oauth2": "1.x.x",
+    "pkginfo": "0.2.x",
+    "passport-strategy": "*"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  }
+}

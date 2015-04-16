@@ -5,6 +5,9 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var path = require("path");
 var util = require('util');
+var passport = require('passport');
+// var CloudFoundryStrategy = require("./passport-pivotalcf").Strategy;
+var PCFStrategy = require("./passport-pivotalcf-oauth2");
 
 //Set Cloud Foundry app's clientID
 var CF_CLIENT_ID = 'newapp';
@@ -26,6 +29,8 @@ var CF_AUTHORIZATION_URL = 'http://localhost:8080/uaa/oauth/authorize';
 
 var CF_TOKEN_URL = 'http://localhost:8080/uaa/oauth/token';
 
+var CF_PROFILE_URL = 'http://localhost:8080/uaa/userinfo';
+
 var CF_LOGOUT_URL = 'http://localhost:8080/uaa/logout.do?redirect=';
 
 var port = (process.env.VCAP_APP_PORT || 9000);
@@ -35,19 +40,21 @@ var loginURL = homeURL + CF_LOGIN_URL;
 
 
 
-var CloudFoundryStrategy = require("./passport-pivotalcf").Strategy;
+
 
 // Use the CloudFoundryStrategy within Passport.
 //   Strategies in Passport require a `verify` function, which accept
 //   credentials (in this case, an accessToken, refreshToken, and CloudFoundry
 //   profile), and invoke a callback with a user object.
-var cfStrategy = new CloudFoundryStrategy({
+var cfStrategy = new PCFStrategy({
     authorizationURL : CF_AUTHORIZATION_URL,
     tokenURL : CF_TOKEN_URL,
     logoutURL : CF_LOGOUT_URL,
     clientID: CF_CLIENT_ID,
     clientSecret: CF_CLIENT_SECRET,
     callbackURL: CF_CALLBACK_URL,
+    profileURL: CF_PROFILE_URL,
+    scope: 'openid',
     grant_type: 'authorization_code',
     skipUserProfile: false
 }, function(accessToken, refreshToken, profile, done) {
@@ -66,7 +73,7 @@ var cfStrategy = new CloudFoundryStrategy({
     });
 });
 
-var passport = require('passport');
+
 
 // Passport session setup.
 //   To support persistent login sessions, Passport needs to be able to
@@ -169,7 +176,7 @@ app.get('/logout', function(req, res) {
       if (err) throw new Exception('Failed to logout ', err);
 
       req.logout();
-      cfStrategy.reset();
+      // cfStrategy.reset();
       res.redirect(CF_LOGOUT_URL + loginURL); 
     });
 
