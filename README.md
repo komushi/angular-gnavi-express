@@ -1,7 +1,7 @@
 # angular-gnavi 3-tier using express
 
 ## Live Demo
-[DEMO SITE](http://angular-gnavi-express.herokuapp.com/)
+[DEMO](http://angular-gnavi-express.herokuapp.com/)
 
 ## Screenshots
 
