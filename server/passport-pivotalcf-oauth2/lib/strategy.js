@@ -1,29 +1,41 @@
 /**
- * IBM Bluemix passport strategy
+ * Pivotal CF passport strategy
  */
 
 var util = require('util')
 , uri = require('url')
-, Profile = require('./profile')
+, profileParser = require('./profileParser')
 , OAuth2Strategy = require('passport-oauth2')
 , InternalOAuthError = require('passport-oauth2').InternalOAuthError;
 
-var PROVIDER = 'pivotalcf',
+var strategyOptions = {},
+	PROVIDER = 'pivotalcf',
     SSO_LOGOUT_URL = 'http://localhost:8080/uaa/logout.do',
     SSO_AUTHORIZATION_URL = 'http://localhost:8080/uaa/oauth/authorize',
     SSO_TOKEN_URL = 'http://localhost:8080/uaa/oauth/token',
     SSO_PROFILE_URL = 'http://localhost:8080/uaa/userinfo';
+    SSO_SCOPE = ['openid'];
+    SSO_SKIP_USER_PROFILE = false;
+    SSO_GRANT_TYPE = 'authorization_code';
 
 function Strategy(options, verify) {
-	options = options || {};
-    options.authorizationURL = options.authorizationURL || SSO_AUTHORIZATION_URL;
-    options.tokenURL = options.tokenURL || SSO_TOKEN_URL;
-    options.profileURL = options.profileURL || SSO_PROFILE_URL;
-    options.logoutURL = options.logoutURL || SSO_LOGOUT_URL;
+	strategyOptions = options || {};
+
+    strategyOptions.authorizationURL = options.authorizationURL || SSO_AUTHORIZATION_URL;
+    strategyOptions.tokenURL = options.tokenURL || SSO_TOKEN_URL;
+    strategyOptions.logoutURL = options.logoutURL || SSO_LOGOUT_URL;
+    strategyOptions.profileURL = options.profileURL || SSO_PROFILE_URL;
+    strategyOptions.callbackURL = options.callbackURL;
+    strategyOptions.clientID = options.clientID;
+    strategyOptions.clientSecret = options.clientSecret;
+    strategyOptions.passReqToCallback = options.passReqToCallback;
+    strategyOptions.scope = options.scope || SSO_SCOPE;
+    strategyOptions.grant_type = SSO_GRANT_TYPE;
+    strategyOptions.skipUserProfile = SSO_SKIP_USER_PROFILE;
 
     //Send clientID & clientSecret in 'Authorization' header
-    var auth = 'Basic ' + new Buffer(options.clientID + ':' + options.clientSecret).toString('base64');
-    options.customHeaders = {
+    var auth = 'Basic ' + new Buffer(strategyOptions.clientID + ':' + strategyOptions.clientSecret).toString('base64');
+    strategyOptions.customHeaders = {
         'Authorization':auth
     };
 
@@ -32,7 +44,7 @@ function Strategy(options, verify) {
         'Authorization':auth
     };
 
-    OAuth2Strategy.call(this, options, verify);
+    OAuth2Strategy.call(this, strategyOptions, verify);
 
 	this.name = PROVIDER;
 
@@ -41,7 +53,7 @@ function Strategy(options, verify) {
 
     this._oauth2.useAuthorizationHeaderforGET(true);
 
-	this._userProfileURI = options.profileURL ;
+	this._userProfileURI = strategyOptions.profileURL ;
 }
 
 util.inherits(Strategy, OAuth2Strategy);
@@ -54,38 +66,66 @@ util.inherits(Strategy, OAuth2Strategy);
  * @api protected
  */
 Strategy.prototype.userProfile = function(accessToken, done) {
-	var url = uri.parse(this._userProfileURI);
-	url = uri.format(url);
-	
-	 this._oauth2.get(url, accessToken, function (err, body, res) {
-	    var json;
-	    
-	    if (err) {
-	      if (err.data) {
-	        try {
-	          json = JSON.parse(err.data);
-	        } catch (_) {}
-	      }
-	      
-	      if (json && json.error && typeof json.error == 'object') {
-	        return done(json, err);
-	      }
-	      return done(new InternalOAuthError('Failed to fetch user profile', err));
-	    }
-	    
-	    try {
-	      json = JSON.parse(body);
-	    } catch (ex) {
-	      return done(new Error('Failed to parse user profile'));
-	    }
-	    var profile = {};
-	    profile = json;
-	    profile._raw = body;
 
-	    done(null, profile);
-	  });    
+// console.log("userProfile accessToken:");
+// console.log(util.inspect(accessToken, false, null));
+
+// console.log("userProfile strategyOptions:");
+// console.log(util.inspect(strategyOptions, false, null));
+
+	if (strategyOptions.scope.indexOf("openid") >= 0)
+	{
+		var url = uri.parse(this._userProfileURI);
+		url = uri.format(url);
+		
+		this._oauth2.get(url, accessToken, function (err, body, res) {
+			var json;
+
+			if (err) {
+			  if (err.data) {
+			    try {
+			      json = JSON.parse(err.data);
+			    } catch (_) {}
+			  }
+			  
+			  if (json && json.error && typeof json.error == 'object') {
+			    return done(json, err);
+			  }
+			  return done(new InternalOAuthError('Failed to fetch user profile', err));
+			}
+
+			try {
+			  json = JSON.parse(body);
+			} catch (ex) {
+			  return done(new Error('Failed to parse user profile'));
+			}
+
+			var profile = {};
+			profile = profileParser.parseProfile(json);
+
+			done(null, profile);
+		});    
+	}
+	else
+	{
+		var profile = {};
+		profile = profileParser.parseAccessToken(accessToken);
+
+		done(null, profile);
+	}
 };
 
+
+Strategy.prototype.authorizationParams = function(options) {
+    if(this._stateParamCallback) {
+        return {'state': this._stateParamCallback()};
+    }
+	return {};
+};
+
+Strategy.prototype.setStateParamCallBack = function(callback) {
+  this._stateParamCallback = callback;
+};
 
 
 /**

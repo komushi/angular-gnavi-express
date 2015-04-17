@@ -5,12 +5,14 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var path = require("path");
 var util = require('util');
+var uuid = require('node-uuid');
 var passport = require('passport');
+
 // var CloudFoundryStrategy = require("./passport-pivotalcf").Strategy;
 var PCFStrategy = require("./passport-pivotalcf-oauth2");
 
 //Set Cloud Foundry app's clientID
-var CF_CLIENT_ID = 'newapp';
+var CF_CLIENT_ID = 'webapp';
 
 //Set Cloud Foundry app's clientSecret
 var CF_CLIENT_SECRET = 'password';
@@ -38,9 +40,36 @@ var host = (process.env.VCAP_APP_HOST || 'localhost');
 var homeURL = JSON.parse(process.env.VCAP_APPLICATION || '{"uris":["' + 'http://' + host + ':' + port + '"]}').uris[0];
 var loginURL = homeURL + CF_LOGIN_URL;
 
+// // Use the CloudFoundryStrategy within Passport.
+// //   Strategies in Passport require a `verify` function, which accept
+// //   credentials (in this case, an accessToken, refreshToken, and CloudFoundry
+// //   profile), and invoke a callback with a user object.
+// var cfStrategy = new PCFStrategy({
+//     authorizationURL : CF_AUTHORIZATION_URL,
+//     tokenURL : CF_TOKEN_URL,
+//     logoutURL : CF_LOGOUT_URL,
+//     clientID: CF_CLIENT_ID,
+//     clientSecret: CF_CLIENT_SECRET,
+//     callbackURL: CF_CALLBACK_URL,
+//     profileURL: CF_PROFILE_URL,
+//     scope: 'openid',
+//     grant_type: 'authorization_code',
+//     skipUserProfile: false
+// }, function(accessToken, refreshToken, profile, done) {
 
 
+//     // asynchronous verification, for effect...
+//     process.nextTick(function() {
 
+//         // To keep the example simple, the user's CloudFoundry profile is returned to
+//         // represent the logged-in user.  In a typical application, you would want
+//         // to associate the CloudFoundry account with a user record in your database,
+//         // and return that user instead.
+//       profile.accessToken = accessToken;
+//       profile.refreshToken = refreshToken;
+//       return done(null, profile);
+//     });
+// });
 
 // Use the CloudFoundryStrategy within Passport.
 //   Strategies in Passport require a `verify` function, which accept
@@ -50,30 +79,51 @@ var cfStrategy = new PCFStrategy({
     authorizationURL : CF_AUTHORIZATION_URL,
     tokenURL : CF_TOKEN_URL,
     logoutURL : CF_LOGOUT_URL,
+    profileURL: CF_PROFILE_URL,
+    callbackURL: CF_CALLBACK_URL,
     clientID: CF_CLIENT_ID,
     clientSecret: CF_CLIENT_SECRET,
-    callbackURL: CF_CALLBACK_URL,
-    profileURL: CF_PROFILE_URL,
-    scope: 'openid',
-    grant_type: 'authorization_code',
-    skipUserProfile: false
-}, function(accessToken, refreshToken, profile, done) {
+    passReqToCallback: true,
+    scope: ['webapp.user']
+}, function(req, accessToken, refreshToken, profile, done) {
 
+// console.log("---PCFStrategy callback---");
+// console.log("req.query:");
+// console.log(util.inspect(req.query, false, null));
+// console.log("states:");
+// console.log(util.inspect(states, false, null));
+// console.log("profile:");
+// console.log(util.inspect(profile, false, null));
 
-    // asynchronous verification, for effect...
-    process.nextTick(function() {
+  if(req.query.state && states[req.query.state]) 
+  {
+    //delete it from memory
+    delete states[req.query.state];
 
-        // To keep the example simple, the user's CloudFoundry profile is returned to
-        // represent the logged-in user.  In a typical application, you would want
-        // to associate the CloudFoundry account with a user record in your database,
-        // and return that user instead.
-      profile.accessToken = accessToken;
-      profile.refreshToken = refreshToken;
-      return done(null, profile);
-    });
+    profile.accessToken = accessToken;
+    profile.refreshToken = refreshToken;
+
+    done(null, profile);
+
+  } 
+  else 
+  {
+    done({"error": 'state value did not match. possible CSRF?'})
+  }
 });
 
+//set a callback to generate 'state' value.
+cfStrategy.setStateParamCallBack(generateStateParam);
 
+// Temporarily store `state` ids
+var states = {};
+
+// Generates a random value to be used as 'state' param during authorization
+function generateStateParam() {
+  var state = uuid.v4();
+  states[state] = true;
+  return state;
+}
 
 // Passport session setup.
 //   To support persistent login sessions, Passport needs to be able to
@@ -126,7 +176,6 @@ var ensureAuthenticated = function(req, res, next) {
 console.log(util.inspect(req.session, false, null));
 console.log(util.inspect(req.originalUrl, false, null));
   if(!req.isAuthenticated()) {
-              req.session.originalUrl = req.originalUrl;
     res.redirect(CF_LOGIN_URL);
   } else {
     return next();
@@ -184,7 +233,8 @@ app.get('/logout', function(req, res) {
 });
 
 app.get('/api', ensureAuthenticated, function(req, res) {
-   res.send('<html><body><a href="/logout">' + req.session.passport.user.given_name + ' Log Out</a></body></html>');
+
+  res.send('<html><body><a href="/logout">' + req.session.passport.user.user_name + ' Log Out</a></body></html>');
 
 });
 
