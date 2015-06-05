@@ -12,7 +12,7 @@ var passport = require('passport');
 var PCFStrategy = require("./passport-pivotalcf-oauth2");
 
 //Set Cloud Foundry app's clientID
-var CF_CLIENT_ID = 'webapp';
+var CF_CLIENT_ID = 'newapp';
 
 //Set Cloud Foundry app's clientSecret
 var CF_CLIENT_SECRET = 'password';
@@ -84,7 +84,7 @@ var cfStrategy = new PCFStrategy({
     clientID: CF_CLIENT_ID,
     clientSecret: CF_CLIENT_SECRET,
     passReqToCallback: true,
-    scope: ['webapp.user']
+    scope: [CF_CLIENT_ID + '.user', 'openid']
 }, function(req, accessToken, refreshToken, profile, done) {
 
 // console.log("---PCFStrategy callback---");

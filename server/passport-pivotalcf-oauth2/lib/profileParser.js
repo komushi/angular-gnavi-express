@@ -2,6 +2,8 @@
  * Parse Cloud Foundry UAA Profile
  */
 exports.parseAccessToken = function(accessToken) {
+  console.log("parseAccessToken");
+
   var b64Token = (accessToken.split("."))[1]; 
 
   var buf = new Buffer(b64Token, 'base64'); // Ta-da
@@ -27,6 +29,8 @@ exports.parseAccessToken = function(accessToken) {
 };
 
 exports.parseProfile = function(json) {
+  console.log("parseProfile");
+  
   if ('string' == typeof json) {
     json = JSON.parse(json);
   }
