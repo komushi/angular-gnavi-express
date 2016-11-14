@@ -1,0 +1,6 @@
+---
+applications:
+- name: gnavi-express
+  memory: 512M 
+  instances: 1
+  host: gnavi-express-${random-word}
